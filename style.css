@@ -1,0 +1,395 @@
+
+.h1{
+    
+}
+.wrapper {
+    margin-right: auto; /* 1 */
+    margin-left:  auto; /* 1 */
+  
+    max-width: 960px; /* 2 */
+  
+    padding-right: 10px; /* 3 */
+    padding-left:  10px; /* 3 */
+  }
+ 
+.navbar{
+    background-color: #e0e0e0;
+    
+}
+.footer{
+    background-color: #e0e0e0;
+}
+.form{
+    color: white;
+}
+.formEmail{
+    
+    border-radius: 10px;
+    margin-bottom: 2%;
+}
+.formFirstName{
+    border-radius: 10px;
+}
+.formLastName{
+    border-radius: 10px;
+}
+.formUsername{
+    border-radius: 10px;
+}
+.formPassword{
+    border-radius: 10px;
+    margin-bottom: 5%;
+}
+.row {
+    
+    --bs-gutter-x: 0rem;
+    --bs-gutter-y: 0;
+}
+
+@media  screen and (max-width: 767px) {
+.form{
+    float: right;
+  margin-right: 18% ;
+  margin-top: 50% ;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+   text-align: center;
+    z-index: 10;
+ 
+    
+
+
+}
+.formTitleEmail{
+    font-family: azo-sans-web, sans-serif;  
+    font-size: 2rem;
+    
+}
+.formTitlePassword{
+   
+   
+}
+
+
+
+.btn-primary{
+    margin-left: 18%;
+    width:  70%;
+    background-color:transparent;
+    border: 5px solid #7a7f84;
+    margin-bottom: 1%;
+}
+
+.hero_bg{
+    background-image: url("https://i.pinimg.com/originals/4e/3d/c2/4e3dc23cab082329b06c4a793ce462a1.jpg");
+    
+    background-repeat: no-repeat;
+    padding-bottom: 200%;
+    height: 300%;
+    width: 100%; 
+    background-size: 360%;
+
+    overflow-x: visible;
+}
+.hero_bg2{
+    background-image: url("https://th.bing.com/th/id/R2da215d71466325c9a995488470b9095?rik=GN6f4DftHDlYUA&riu=http%3a%2f%2f78.media.tumblr.com%2f89dd324a1d3188c3f451d18ee6a41ae0%2ftumblr_onpj4ipBsG1syx6l9o2_1280.png&ehk=kvDUrxzYdKvXx8knIgyAHcetOjZKNQKBIAfUZ%2fzI9zY%3d&risl=&pid=ImgRaw");
+    
+    
+    background-repeat: no-repeat;
+    padding-bottom: 200%;
+    height: 300%;
+    width: 100%; 
+    background-size: 120%;
+
+    overflow-x: visible;
+}
+.footer {
+    
+    z-index: 12;
+}
+.logo{
+    width: 20%;
+}
+.offset-md-2{
+    margin-left: 15%;
+}
+.center{
+    margin-left: 25%;
+}
+.top{
+    margin-top: 20%;
+}
+   
+  }
+  @media  screen and (max-width: 376px) {
+    .form{
+        float: right;
+      margin-right: 14% ;
+      margin-top: 50% ;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+       text-align: center;
+        z-index: 10;
+      
+    
+    
+    }
+    .offset-md-2{
+        margin-left: 15%;
+    }
+    .center{
+        margin-left: 25%;
+    }
+    .top{
+        margin-top: 20%;
+    }
+}
+  @media  screen and (min-width: 768px) {
+    .form{
+        float: right;
+      margin-right: 15% ;
+      margin-top: 40% ;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+       text-align: center;
+        z-index: 10;
+       
+        font-size: 2rem;
+    
+    
+    }
+    
+    .formTitleEmail{
+        font-family: azo-sans-web, sans-serif;   
+        
+        
+    }
+    .formTitlePassword{
+       
+       
+    }
+   
+    .formEmail{
+      
+        margin-bottom: 1%;
+    }
+   
+    .formPassword{
+        
+        margin-bottom: 5%;
+    }
+    
+    .btn-primary{
+        margin-left: 18%;
+        width:  70%;
+        background-color:transparent;
+    border: 5px solid #7a7f84;
+        margin-bottom: 1%;
+    }
+    
+    .hero_bg{
+        background-image: url("https://i.pinimg.com/originals/4e/3d/c2/4e3dc23cab082329b06c4a793ce462a1.jpg");
+        
+        background-repeat: no-repeat;
+        padding-bottom: 200%;
+        height: 300%;
+        width: 100%; 
+        background-size: 360%;
+    
+        overflow-x: visible;
+    }
+    .hero_bg2{
+        background-image: url("https://th.bing.com/th/id/R2da215d71466325c9a995488470b9095?rik=GN6f4DftHDlYUA&riu=http%3a%2f%2f78.media.tumblr.com%2f89dd324a1d3188c3f451d18ee6a41ae0%2ftumblr_onpj4ipBsG1syx6l9o2_1280.png&ehk=kvDUrxzYdKvXx8knIgyAHcetOjZKNQKBIAfUZ%2fzI9zY%3d&risl=&pid=ImgRaw");
+        
+        background-repeat: no-repeat;
+        padding-bottom: 128%;
+        height: 200%;
+        width: 100%; 
+        background-size: 100%;
+    
+        overflow-x: visible;
+    }
+    .footer {
+        
+        z-index: 12;
+    }
+    .logo{
+        width: 4%;
+        
+        
+    }
+    .offset-md-2{
+        margin-left: 15%;
+    }
+    .center{
+        margin-left: 25%;
+    }
+   
+}
+      @media  screen and (min-width: 1024px) {
+        .form{
+            float: right;
+          margin-right: 30% ;
+          margin-top: 20% ;
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+           text-align: center;
+            z-index: 10;
+         
+            font-size: 2rem;
+        
+        
+        }
+        .formTitleEmail{
+            font-family: azo-sans-web, sans-serif;  
+            
+            
+        }
+        .formTitlePassword{
+           
+           
+        }
+       
+        .formEmail{
+           
+            margin-bottom: 1%;
+        }
+      
+        .formPassword{
+           
+            margin-bottom: 5%;
+        }
+        
+        .btn-primary{
+            margin-left: 18%;
+            width:  70%;
+            
+            margin-bottom: 1%;
+            background-color:transparent;
+            border: 5px solid #7a7f84;
+            
+        }
+        .sign_up{
+            font-size: 1.2rem;
+        }
+        .hero_bg{
+            background-image: url("https://i.pinimg.com/originals/4e/3d/c2/4e3dc23cab082329b06c4a793ce462a1.jpg");
+            
+            background-repeat: no-repeat;
+            padding-bottom: 82%;
+            height: 100%;
+            width: 100%; 
+            background-size: 160%;
+        
+            overflow-x: visible;
+        }
+        .hero_bg2{
+            background-image: url("https://wallpapercave.com/wp/wp3277296.jpg");
+            
+            background-repeat: no-repeat;
+             padding-bottom: 82%;
+            height: 100%;
+            width: 100%; 
+            background-size: 140%;
+        
+            overflow-x: visible;
+        }
+    }
+    .offset-md-2{
+        margin-left: 15%;
+    }
+    .center{
+        margin-left: 25%;
+    }
+    .bg-image{
+        
+        height: 89vh;
+    }
+        @media  screen and (min-width: 1600px) {
+            .form{
+                float: right;
+              margin-right: 30% ;
+              margin-top: 5% ;
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: column;
+               text-align: center;
+                z-index: 10;
+                
+                font-size: 2rem;
+            
+            
+            }
+            .formTitleEmail{
+                font-family: azo-sans-web, sans-serif;  
+                
+                
+            }
+            .formTitlePassword{
+               
+               
+            }
+         .formTitleUsername{
+                
+            
+            }
+            
+            .formEmail{
+                
+                margin-bottom: 1%;
+            }
+            
+        
+            .formPassword{
+              
+                margin-bottom: 5%;
+            }
+            
+            .btn-primary{
+                margin-left: 18%;
+                width:  70%;
+                
+                margin-bottom: 1%;
+            }
+            .sign_up{
+                font-size: 1.2rem;
+            }
+            .hero_bg{
+                background-image: url("https://i.pinimg.com/originals/4e/3d/c2/4e3dc23cab082329b06c4a793ce462a1.jpg");
+                
+                background-repeat: no-repeat;
+                padding-bottom: 52%;
+                height: 100%;
+                width: 100%; 
+                background-size: 100%;
+            
+                overflow-x: visible;
+            }
+            .hero_bg2{
+                background-image: url("https://wallpapercave.com/wp/wp3277296.jpg");
+                
+                background-repeat: no-repeat;
+                padding-bottom: 52%;
+                height: 100%;
+                width: 100%; 
+                background-size: 100%;
+            
+                overflow-x: visible;
+            }
+            .logo{
+                width: 4%;
+               
+            }
+        }
+        .center{
+            margin-left: 32%;
+        }
+        .bg-image{
+        
+            height: 65.8vh;
+        }
+    
