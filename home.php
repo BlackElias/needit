@@ -95,11 +95,11 @@ moeite waard.</p>
 
  
   <h1 class="title">Mission statement</h1>
-  <p class="text-mobile">Vijfduizend euro voor spullen die je nauwelijks gebruikt. Neem bijvoorbeeld een gemiddelde boormachine; die wordt maar zo’n 15 minuten gebruikt tijdens zijn hele levensduur. En dat terwijl zo’n boor wel 8 uur aan een stuk kan boren. 
+  <p class="text-mobile text-medium">Vijfduizend euro voor spullen die je nauwelijks gebruikt. Neem bijvoorbeeld een gemiddelde boormachine; die wordt maar zo’n 15 minuten gebruikt tijdens zijn hele levensduur. En dat terwijl zo’n boor wel 8 uur aan een stuk kan boren. 
 
 Dat is alsof je een 10-literpak melk moet kopen terwijl je maar een glaasje wilt drinken. Als we een boormachine delen kunnen er maar liefst 32 mensen plezier van hebben in. En dat scheelt een hoop.</p>
   <h1 class="title">Over ons</h1>
-  <p class="text-mobile">Needit is een markt platform gemaakt door 2 studenten van Thomas more. Om mensen weer sociaal contact te zoeken door goederen  en diensten te kunnen lenen tussen buren of onbekende. Hierdoor pakken we ook 
+  <p class="text-mobile text-medium">Needit is een markt platform gemaakt door 2 studenten van Thomas more. Om mensen weer sociaal contact te zoeken door goederen  en diensten te kunnen lenen tussen buren of onbekende. Hierdoor pakken we ook 
 circulaire economie aan en gaan we producten hun levensduur meer gebruiken.
 
 Needit is met geen enkele politieke partij of andere belanghebbers verbonden en We hebben nog geen samenwerkingen. </p>
