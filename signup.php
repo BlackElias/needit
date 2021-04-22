@@ -27,7 +27,7 @@ if (!empty($_POST)) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: 0px 0px 6px grey;">
+<nav class="navbar navbar-expand-lg navbar-light bg-white" style="box-shadow: 0px 3px 3px black;">
     <div class="container-fluid text-center ">
     <img class="logo" src="img/logo.png" alt="logo">
 

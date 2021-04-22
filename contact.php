@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: 0px 0px 6px grey;">
+<nav class="navbar navbar-expand-lg navbar-light bg-white" style="box-shadow: 0px 3px 3px black;">
     <div class="container-fluid text-center ">
     <img class="logo" src="img/logo.png" alt="logo">
 
@@ -33,8 +33,9 @@
     </div>
 </nav>
 
-<body>
-    <div class="row" style="--bs-gutter-x: 0rem;">
+<body style="background-color: #1E706B;">
+
+    <div class="row" style="--bs-gutter-x: 0rem; background-color:white;">
         <div class="bg-image p-3 text-center shadow-1-strong col-md   flex-item-left" style="
        width: 80vh; background-size: 50%; background-repeat: no-repeat; margin-top: 150px;">
             <h1 class="mb-3 h2">Contacteer ons</h1>
@@ -44,12 +45,12 @@
             
 
             <p>Of vul het email formulier in </p>
-            
+        
         </div>
 
 
 
-        <div class="col-md wrapper " style="margin-top: 150px; ">
+        <div class="col-md wrapper " style="margin-top: -150px; ">
             <form action="mailto:elias.valienne@hotmail.com" method="POST">
                 <div class="form-outline" style="margin-top: 2%;">
                     <label class="form-label" for="typeText">Name input</label>
@@ -74,7 +75,7 @@
                 </button>
             </form>
         </div>
-
+</div>
         <footer class="footer bg-light text-center text-lg-start">
         <!-- Copyright -->
         <div class="text-center text-white p-3" style="color:white; background-color: #252523; box-shadow: 0px 0px 6px grey;">

@@ -29,7 +29,7 @@ if (!empty($_POST)) {
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: 0px 0px 6px grey;">
+<nav class="navbar navbar-expand-lg navbar-light bg-white" style="box-shadow: 0px 3px 3px black;">
     <div class="container-fluid text-center ">
     <img class="logo" src="img/logo.png" alt="logo">
 

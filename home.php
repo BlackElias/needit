@@ -7,9 +7,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://use.typekit.net/hay5vbn.css">
+    <link rel="stylesheet" href="https://use.typekit.net/hay5vbn.css">
+    <title>Needit</title>
 </head>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: 0px 0px 6px grey;">
+<nav class="navbar navbar-expand-lg navbar-light bg-white" style="box-shadow: 0px 3px 3px black;">
     <div class="container-fluid text-center ">
     <img class="logo" src="img/logo.png" alt="logo">
 
@@ -31,7 +33,9 @@
     </div>
 </nav>
 <body>
-    
+  <h1 class="wrapper title">Needit! Leer en leen met je buren</h1>
+  <h3 class="wrapper">Top markt platform voor u en uw buren <br>Lennen gaat nu nog gemakkelijker!</h3>  
+  <img src="img/" alt="">
 </body>
 <footer class="footer bg-light text-center text-lg-start">
         <!-- Copyright -->
