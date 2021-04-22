@@ -1,10 +1,6 @@
-
-.title{
-    font-family: futura-pt-condensed, sans-serif;
-
-    font-weight: 700;
-    
-    font-style: normal;
+body{
+    background-color:#F8F7F7 ;
+    overflow-x: hidden;
 }
 .wrapper {
     margin-right: auto; /* 1 */
@@ -19,6 +15,13 @@
 .navbar{
     background-color: #e0e0e0;
     
+}
+.font{
+    font-family: futura-pt, sans-serif;
+
+font-weight: 400;
+
+font-style: normal;
 }
 .footer{
     background-color: #e0e0e0;
@@ -36,22 +39,276 @@
    .logo{
        width: 10%;
    }
+   .title{
+    font-family: futura-pt, sans-serif;
+
+    font-weight: 700;
+    font-size: xx-large;
+    font-style: normal;
+    padding-top: 10%;
+    padding-left: 10%;
+    
 }
-  @media  screen and (min-width: 768px) {
+.title-left{
+    font-family: futura-pt, sans-serif;
+
+    font-weight: 700;
+    font-size: xx-large;
+    font-style: normal;
+    padding-top: 10%;
    
     
+}
+    .title-text{
+        font-family: futura-pt-condensed, sans-serif;
+
+        
+        font-size: normal;
+        font-style: normal;
+        padding-left: 10%;
+    }
+    .title-img{
+        padding-top: 48%;
+    }
+    .text-mobile{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    .mockup{
+        width: 100%;
+    }
+    .grey{
+        background-color:#FFFFFF ;
+        padding-right: -10%;
+        padding-bottom: 2%;
+    }
+    .input{
+        border-radius: 25px;
+    }
+    .black-border{
+        border: 3px solid black;
+        background-color : #ffffff75; 
+    }
+}
+
+
+
+
+@media  screen and (min-width: 400px) {
+    .logo{
+        width: 10%;
+    }
+    .title{
+     font-family: futura-pt, sans-serif;
+ 
+     font-weight: 700;
+     font-size: xx-large;
+     font-style: normal;
+     padding-top: 10%;
+     padding-left: 10%;
+     
+ }
+ .title-left{
+     font-family: futura-pt, sans-serif;
+ 
+     font-weight: 700;
+     font-size: xx-large;
+     font-style: normal;
+     padding-top: 10%;
+    
+     
+ }
+     .title-text{
+         font-family: futura-pt-condensed, sans-serif;
+ 
+         
+         font-size: normal;
+         font-style: normal;
+         padding-left: 10%;
+     }
+     .title-img{
+         padding-top: 48%;
+     }
+     .text-mobile{
+         padding-left: 10%;
+         padding-right: 10%;
+     }
+     .mockup{
+         width: 100%;
+     }
+     .grey{
+         background-color:#FFFFFF ;
+         padding-right: -10%;
+         padding-bottom: 2%;
+     }
+     .input{
+         border-radius: 25px;
+     }
+     .black-border{
+         border: 3px solid black;
+         background-color : #ffffff75; 
+     }
+    
+    
+    }
+   
+
+
+
+
+
+  @media  screen and (min-width: 768px) {
+   .wrapper-medium{
+       padding-left: 15%;
+       padding-right: 15%;
+   }
+    .w-50{
+        width: 100%!important;
+    }
     
     }
    
    
    
 
-      @media  screen and (min-width: 1024px) {
+
+@media  screen and (min-width: 1024px) {
        
+
+    .title{
+        font-family: futura-pt, sans-serif;
+    
+        font-weight: 700;
+        font-size: 500%;
+        font-style: normal;
+        padding-top: 10%;
+        padding-left: 10%;
+        
     }
-        @media  screen and (min-width: 1600px) {
-          
-           
+    .title-left{
+        font-family: futura-pt, sans-serif;
+    
+        font-weight: 700;
+        font-size: xx-large;
+        font-style: normal;
+        padding-top: 10%;
+       
+        
+    }
+    .text-mobile{
+        font-size: 1.4rem;
+    }   
+        
+
+    }
+
+
+
+
+
+ @media  screen and (min-width: 1600px) {
+     .wrapper{
+         max-width: none!important;
+         
+     }     
+    .logo{
+        width: 5%;
+    }
+    .title{
+     font-family: futura-pt, sans-serif;
+ 
+     font-weight: 700;
+     font-size: 400%;
+     font-style: normal;
+     padding-top: 10%;
+     padding-left: 10%;
+     z-index: 1;
+ }
+ .title-left{
+     font-family: futura-pt, sans-serif;
+ 
+     font-weight: 700;
+     font-size: xx-large;
+     font-style: normal;
+     padding-top: 10%;
+    
+     
+ }
+ .title-maxScreen{
+     margin-left: -5%;
+     font-family: futura-pt, sans-serif;
+ 
+     font-weight: 700;
+     font-size: 350%;
+     font-style: normal;
+     padding-top: 10%;
+     padding-left: 10%;
+     z-index: 1
+ }
+ .text-maxScreen{
+    margin-left: -5%;
+    margin-right: 55% ;
+    
+}
+
+     .title-text{
+         font-family: futura-pt-condensed, sans-serif;
+ 
+    float: left;
+         font-size: xx-large;
+         font-style: normal;
+         padding-left: 10%;
+     }
+     .title-img{
+         padding-top: 0%;
+        margin-left: 50%;
+        padding-right: -20%;
+        margin-top: -30%;
+         width: 80%;
+         z-index: -1;
+       
+     }
+     .text-mobile{
+         padding-left: 10%;
+         padding-right: 10%;
+     }
+     .mockup{
+         width: 60%;
+         margin-top: -25%;
+         margin-left: 12%;
+     }
+     .grey{
+         background-color:#FFFFFF ;
+         padding-right: -10%;
+         padding-bottom: 2%;
+         margin-top: -46%;
+         margin-left: 50%;
+         padding-top: 8%;
+         box-shadow: 1px 6px 10px black;
+     }
+     .input{
+         border-radius: 25px;
+     }
+     .black-border{
+         border: 3px solid black;
+         background-color : #ffffff75; 
+     }
+     .background{
+        padding-top: 0%;
+   margin-bottom: 0%!important;
+        margin-left: -0%;
+        margin-top: -35%;
+         width: 50%;
+         z-index: 1;
+     }
+     .footer{
+         margin-top: -1.4%;
+z-index: 100;
+     }
+     .text-mobile{
+        font-size: 1rem!important;
+    }
+     
                
             }
        
