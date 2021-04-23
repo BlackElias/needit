@@ -51,7 +51,7 @@ moeite waard.</p>
 
 
 
-  <div class="grey wrapper">
+  <div class=" wrapper">
   <form method="POST" class="wrapper-medium"> 
   <div class="mb-3 font">
       <h1 class="title-left">Meld je aan!</h1>
