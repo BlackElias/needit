@@ -1,38 +1,71 @@
-<?php
-include_once("bootstrap.php");
-$conn = Db::getConnection();
-
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="app.css">
   <title>Document</title>
 </head>
-<nav class="navbar navbar-expand-lg navbar-light bg-white" style="box-shadow: 0px 3px 3px black;">
-    <div class="container-fluid text-center ">
-    <img class="logo" src="img/logo.png" alt="logo">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: white; box-shadow: 0px 3px 3px black;">
 
+    <!-- Navbar brand -->
+   
+   <img class="logo" src="img/logo.png" alt="logo" style="margin-left: 10px;">
+   <div class="center" style=" ">  <form class="form-inline ">
+        <div class="md-form my-0 ">
+          <input class="form-control mr-sm-2 searchbar " style="width: 150%; " type="text" placeholder="Zoek" aria-label="Search">
+        </div>
+      </form>
+</div>
+    <!-- Collapse button -->
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      
+    
+   
+     
+     <div class="navbar-collapse collapse" id="basicExampleNav" style="margin-left: 25%;">
 
+<!-- Links -->
+<ul class="navbar-nav mr-auto">
+  <li class="nav-item active">
+    <a class="nav-link waves-effect waves-light" href="#">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link waves-effect waves-light" href="#">verzoek/toevoegen</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link waves-effect waves-light" href="#">profiel</a>
+  </li>
+</ul>
+     </div>
+<!-- Links -->
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="justify-content: center; margin-left:-4%;">
-            <div class="navbar-nav">
-            <a class="nav-link " aria-current="page" href="home.php">Home</a>
+  </nav>
+<!-- Navbar -->
+<body>
+  <div class="filter">
+  <div class="row" style="--bs-gutter-x: 0rem;">
+        <div class="bg-image p-3 text-center shadow-1-strong col-md  text-white flex-item-left" style="background-color:#7a7f84 ;
+        background-size: 110%;  height: 90vh; flex: 0 1 0%;">
+            <h1>filters</h1>
             
-                <a class="nav-link active" aria-current="page" href="contact.php">Contact</a>
-                
-                <a class="nav-link " href="about.php">About Us</a>
-                <a class="nav-link" href="login.php">Login</a>
-            </div>
+        </div>
+
+
+
+        <div class="col-md col-mobile">
+        <h1>articles</h1>
+      
         </div>
     </div>
-</nav>
-<body>
-  
+  </div>
 </body>
 <footer class="footer bg-light text-center text-lg-start">
         <!-- Copyright -->

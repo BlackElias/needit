@@ -1,24 +1,4 @@
-<?php
-include_once("bootstrap.php");
-
-$conn = Db::getConnection();
-
-if (!empty($_POST)) {
-    try {
-        $user = new User();
-
-        $user->setUsername($_POST["username"], "login");
-        $user->setPassword($_POST["password"], "login");
-        $user->login();
-        session_start();
-        $_SESSION["username"] = $user->getUsername();
-        var_dump($_SESSION["username"]);
-        header("Location: index.php");
-    } catch (\Throwable $th) {
-        $error = $th->getMessage();
-    }
-}
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -64,7 +44,7 @@ if (!empty($_POST)) {
 
   <div class="mb-3 font ">
     <label for="exampleInputEmail1" class="form-label ">Passwoord</label>
-    <input type="email" class="form-control black-border w-30" style="border-radius: 10px;" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="pasword" class="form-control black-border w-30" style="border-radius: 10px;" id="exampleInputEmail1" aria-describedby="emailHelp">
     
   </div>
 

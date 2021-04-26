@@ -1,0 +1,43 @@
+
+
+
+@media  screen and (max-width: 376px) {
+    .logo{
+        width: 15%;
+    }
+    .searchbar{
+        border-radius: 100px;
+      border: 2px solid black ;
+    }
+}
+@media  screen and (min-width: 400px) {
+    .logo{
+        width: 10%;
+    }
+    .searchbar{
+        border-radius: 100px;
+      border: 2px solid black ;
+    }
+}
+@media  screen and (min-width: 768px) {
+
+}
+@media  screen and (min-width: 1024px) {
+
+} 
+@media  screen and (min-width: 1600px) {
+    .logo{
+        width: 5%;
+    }
+    .searchbar{
+        border-radius: 100px;
+      border: 2px solid black ;
+     
+    }
+    .center{
+        margin-left: 37%;    
+    }
+    .bg-image{
+        height: 86vh;
+    }
+}
