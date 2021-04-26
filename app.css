@@ -40,4 +40,13 @@
     .bg-image{
         height: 86vh;
     }
+    .finders{
+           font-family: futura-pt, sans-serif;
+
+    font-weight: 200;
+    font-size: xx-large;
+    font-style: normal;
+    color: black;
+    
+    }
 }
