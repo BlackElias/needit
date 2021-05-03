@@ -67,41 +67,25 @@
 
       <div class="col-md col-mobile">
 
-        <div style="margin-left: 39%; margin-top: 2%">
-          <a href="" class="finders " style="text-decoration: none;  color:black; margin-right:50px;">Artikelen </a><a href="zoekertjes.php" class="finders" style="text-decoration: none; color:grey ;">Zoekertjes</a>
-          <hr style="margin-right: 73%; marging-top: 0px">
-
-        </div>
-
-        <div class="d-flex fllex-wrap" style="margin-left: 2%;">
-        <a href="" style="text-decoration: none;" class="article_clickable">
-          <div class="article ">
+       
+       
+        
+          <div class="article-detail ">
           
-            <img src="img/background.png" alt="" style="width: 200px; height: 200px;">
-            <h4>Item 1</h4>
+            <img src="img/background.png" alt="" style=" " class="float-start article-image">
+            <div class="grey">
+            <h4 >Item 1</h4>
             <p>descr</p>
+            <button class="article-button" id="btn-left">Leen het nu</button>
+            <button class="article-button">Stuur een berichtje</button>
+            </div>
           </div>
-          <div class="grey">
-            <p>
-            username
-            </p>
-          </div>
-        </a>
-
-        <a href="" style="text-decoration: none;" class="article_clickable">
-          <div class="article ">
           
-            <img src="img/background.png" alt="" style="width: 200px; height: 200px;">
-            <h4>Item 2</h4>
-            <p>descr</p>
+           
           </div>
-          <div class="grey">
-            <p>
-            username
-            </p>
-          </div>
-        </a>
+        
 
+        
         
 
       </div>

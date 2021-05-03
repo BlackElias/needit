@@ -68,7 +68,7 @@
       <div class="col-md col-mobile">
 
         <div style="margin-left: 39%; margin-top: 2%">
-          <a href="" class="finders " style="text-decoration: none;  color:black; margin-right:50px;">Artikelen </a><a href="zoekertjes.php" class="finders" style="text-decoration: none; color:grey ;">Zoekertjes</a>
+          <a href="index.php" class="finders " style="text-decoration: none;  color:grey; margin-right:50px;">Artikelen </a><a href="" class="finders" style="text-decoration: none; color:black ;">Zoekertjes</a>
           <hr style="margin-right: 73%; marging-top: 0px">
 
         </div>
@@ -111,12 +111,12 @@
 </div>
 </body>
 <footer class="footer bg-light text-center text-lg-start">
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0); box-shadow: 0px 0px 6px grey;">
-    © 2020 Copyright:
-    <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-  </div>
-  <!-- Copyright -->
-</footer>
+        <!-- Copyright -->
+        <div class="text-center text-white p-3" style="color:white; background-color: #252523; box-shadow: 0px 0px 6px grey;">
+           
+            <a class="text-white" style="color:white; text-decoration: none;" href="">© 2020 Copyright: Elias Valienne en Kevin Vanbockryck</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
 
 </html>

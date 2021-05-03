@@ -1,5 +1,13 @@
 
-
+.wrapper {
+    margin-right: auto; /* 1 */
+    margin-left:  auto; /* 1 */
+  
+    max-width: 960px; /* 2 */
+  
+    padding-right: 10px; /* 3 */
+    padding-left:  10px; /* 3 */
+  }
 
 @media  screen and (max-width: 376px) {
     .logo{
@@ -49,4 +57,82 @@
     color: black;
     
     }
+    .article{
+       text-decoration: none;
+        color: black;
+        background-color: #f9f7f7;
+    }
+    .article_clickable{
+        margin-right: 10%;
+        box-shadow:0.1px 0.1px 5px black;
+        color: black;
+    }
+    .article-detail{
+        margin: 10%;
+        background-color: #f9f7f7;
+    }
+    .article-image{
+        width: 420px; height: 420px;
+        border: 2px solid #20817E;
+    }
+    .grey{
+        padding-left: 32%;
+    }
+    .article-button{
+        margin-top: 28.9%;
+    
+        background-color:#20817E;
+        border-radius:15px;
+       
+        cursor:pointer;
+        color:#ffffff;
+        border: none;
+        padding-left: 15px ;
+        padding-right: 15px ;
+        padding-top: 5px ;
+        padding-bottom: 5px ;
+        margin-bottom: 2% ;
+        text-decoration:none;
+        font-family: futura-pt, sans-serif;
+
+        font-weight: 200;
+        font-size: x-large;
+        font-style: normal;
+        
+    }
+    .article-button:hover {
+        background-color:#2b9995;
+    }
+    #btn-left{
+        margin-right: 40%;
+    }
+    #btn-right{
+        margin-right: 22%;
+        margin-left: 17%;
+        margin-top: -20%;
+    }
+    #btn-center{
+        margin-right: 23%;
+        
+        margin-top: -20%;
+    }
+    
+    .title-add{
+        padding-top: 15%;
+        
+        font-family: futura-pt, sans-serif;
+
+    font-weight: 200;
+    font-size: xx-large;
+    font-style: normal;
+    color: black;
+    margin-left: 12%;
+    }
+    #btn{
+        margin-top: -20%;
+    }
+    .btns{
+        margin-bottom: 20.2%;
+    }
+    
 }
