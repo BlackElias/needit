@@ -54,22 +54,24 @@
 </nav>
 <!-- Navbar -->
 
-<body style="background-color: #F9F7F7;">
-  <div class="filter">
-    <div class="row" style="--bs-gutter-x: 0rem;">
-      <div class="bg-image p-3 text-center shadow-1-strong col-md  text-white flex-item-left" style=" 
-        background-size: 110%;  height: 90vh; flex: 1 1 0%;">
+<body>
+ <div class="d-flex ">
+   <p class="title-add">ik wil een product plaatsen</p>
+   <p class="title-add">Ik wil een dienst plaatsen</p>
+   <p class="title-add">ik wil een verzoekertje plaatsen</p>
+    </div>  
+
+
+
+      <div class=" btns">
+     <a href=""> <button class="article-button" id="btn-right">Leen het nu</button></a>
+     <a href=""> <button class="article-button" id="btn-center">Leen het nu</button></a>
+     <a href=""> <button class="article-button" id="btn">Leen het nu</button></a>
+
+        </div>
+
+        <div class="d-flex fllex-wrap" style="margin-left: 2%;">
         
-        <div class="mb-3 image-upload">
-        <h1 class="title-add">Selecteer uw foto</h1>
-                <label for="postImage" class="form-label">Image</label>
-                <input type="file" class="form-control form-border" name="image" id="postImage" onchange="getImage(this);" />
-            </div>
-      </div>
-
-
-
-      <div class="col-md col-mobile">
 
         
 
@@ -82,12 +84,12 @@
 </div>
 </body>
 <footer class="footer bg-light text-center text-lg-start">
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0); box-shadow: 0px 0px 6px grey;">
-    © 2020 Copyright:
-    <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-  </div>
-  <!-- Copyright -->
-</footer>
+        <!-- Copyright -->
+        <div class="text-center text-white p-3" style="color:white; background-color: #252523; box-shadow: 0px 0px 6px grey;">
+           
+            <a class="text-white" style="color:white; text-decoration: none;" href="">© 2020 Copyright: Elias Valienne en Kevin Vanbockryck</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
 
 </html>
