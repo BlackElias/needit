@@ -55,52 +55,25 @@
 <!-- Navbar -->
 
 <body>
-  <div class="filter">
-    <div class="row" style="--bs-gutter-x: 0rem;">
-      <div class="bg-image p-3 text-center shadow-1-strong col-md  text-white flex-item-left" style="background-color:#7a7f84 ;
-        background-size: 110%;  height: 90vh; flex: 0 1 0%;">
-        <h1>filters</h1>
-
-      </div>
+ <div class="d-flex ">
+   <p class="title-add">ik wil een product plaatsen</p>
+   <p class="title-add">Ik wil een dienst plaatsen</p>
+   <p class="title-add">ik wil een verzoekertje plaatsen</p>
+    </div>  
 
 
 
-      <div class="col-md col-mobile">
-
-        <div style="margin-left: 39%; margin-top: 2%">
-          <a href="" class="finders " style="text-decoration: none;  color:black; margin-right:50px;">Artikelen </a><a href="zoekertjes.php" class="finders" style="text-decoration: none; color:grey ;">Zoekertjes</a>
-          <hr style="margin-right: 73%; marging-top: 0px">
+      <div class=" btns">
+     <a href=""> <button class="article-button" id="btn-right">Leen het nu</button></a>
+     <a href=""> <button class="article-button" id="btn-center">Leen het nu</button></a>
+     <a href=""> <button class="article-button" id="btn">Leen het nu</button></a>
 
         </div>
 
         <div class="d-flex fllex-wrap" style="margin-left: 2%;">
-        <a href="" style="text-decoration: none;" class="article_clickable">
-          <div class="article ">
-          
-            <img src="img/background.png" alt="" style="width: 200px; height: 200px;">
-            <h4>Item 1</h4>
-            <p>descr</p>
-          </div>
-          <div class="grey">
-            <p>
-            username
-            </p>
-          </div>
-        </a>
+        
 
-        <a href="" style="text-decoration: none;" class="article_clickable">
-          <div class="article ">
-          
-            <img src="img/background.png" alt="" style="width: 200px; height: 200px;">
-            <h4>Item 2</h4>
-            <p>descr</p>
-          </div>
-          <div class="grey">
-            <p>
-            username
-            </p>
-          </div>
-        </a>
+        
 
         
 
@@ -111,12 +84,12 @@
 </div>
 </body>
 <footer class="footer bg-light text-center text-lg-start">
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0); box-shadow: 0px 0px 6px grey;">
-    © 2020 Copyright:
-    <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-  </div>
-  <!-- Copyright -->
-</footer>
+        <!-- Copyright -->
+        <div class="text-center text-white p-3" style="color:white; background-color: #252523; box-shadow: 0px 0px 6px grey;">
+           
+            <a class="text-white" style="color:white; text-decoration: none;" href="">© 2020 Copyright: Elias Valienne en Kevin Vanbockryck</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
 
 </html>

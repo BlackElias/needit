@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,9 +53,15 @@ moeite waard.</p>
 
 
 
-  <div class="grey wrapper">
+  <div class="form-signup wrapper">
   <form method="POST" class="wrapper-medium"> 
+  <?php if (isset($error)) : ?>
+    <div class="error">
+      <h3><?php echo $error ?></h3>
+    </div>
+  <?php endif; ?>
   <div class="mb-3 font">
+    
       <h1 class="title-left">Meld je aan!</h1>
     <label for="username" class="form-label">Gebruikersnaam</label>
     <input type="name" class="form-control black-border" style="border-radius: 10px;" id="username" >
@@ -67,7 +75,7 @@ moeite waard.</p>
 
   <div class="mb-3 font ">
     <label for="exampleInputEmail1" class="form-label">Passwoord</label>
-    <input type="email" class="form-control black-border" style="border-radius: 10px;" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="password" class="form-control black-border" style="border-radius: 10px;" id="exampleInputEmail1" aria-describedby="emailHelp">
     
   </div>
 
@@ -78,8 +86,8 @@ moeite waard.</p>
   </div>
 
   <div class="mb-3 font float-end">
-    <label for="exampleInputEmail1" class="form-label">Nummer</label>
-    <input type="email" class="form-control black-border w-50" style="border-radius: 10px;" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <label for="exampleInputEmail1" class="form-label">Straat nummer</label>
+    <input type="number" class="form-control black-border w-50" style="border-radius: 10px;" id="exampleInputEmail1" aria-describedby="emailHelp">
     
   </div>
 
@@ -90,21 +98,21 @@ moeite waard.</p>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
  
-  
-
+  </form>
+ </div>
 
  
-  <h1 class="title">Mission statement</h1>
-  <p class="text-mobile text-medium">Vijfduizend euro voor spullen die je nauwelijks gebruikt. Neem bijvoorbeeld een gemiddelde boormachine; die wordt maar zo’n 15 minuten gebruikt tijdens zijn hele levensduur. En dat terwijl zo’n boor wel 8 uur aan een stuk kan boren. 
+  <h1 class="title title-mission">Mission statement</h1>
+  <p class="text-mobile text-medium title-mission">Vijfduizend euro voor spullen die je nauwelijks gebruikt. Neem bijvoorbeeld een gemiddelde boormachine; die wordt maar zo’n 15 minuten gebruikt tijdens zijn hele levensduur. En dat terwijl zo’n boor wel 8 uur aan een stuk kan boren. 
 
 Dat is alsof je een 10-literpak melk moet kopen terwijl je maar een glaasje wilt drinken. Als we een boormachine delen kunnen er maar liefst 32 mensen plezier van hebben in. En dat scheelt een hoop.</p>
-  <h1 class="title">Over ons</h1>
-  <p class="text-mobile text-medium">Needit is een markt platform gemaakt door 2 studenten van Thomas more. Om mensen weer sociaal contact te zoeken door goederen  en diensten te kunnen lenen tussen buren of onbekende. Hierdoor pakken we ook 
+  <h1 class="title title-mission">Over ons</h1>
+  <p class="text-mobile text-medium title-mission">Needit is een markt platform gemaakt door 2 studenten van Thomas more. Om mensen weer sociaal contact te zoeken door goederen  en diensten te kunnen lenen tussen buren of onbekende. Hierdoor pakken we ook 
 circulaire economie aan en gaan we producten hun levensduur meer gebruiken.
 
 Needit is met geen enkele politieke partij of andere belanghebbers verbonden en We hebben nog geen samenwerkingen. </p>
-</form>
-  </div>
+
+ 
   <img src="img/background.png" alt="background" class="img-fluid background">
 </body>
 <footer class="footer bg-light text-center text-lg-start">
