@@ -138,5 +138,29 @@
         padding: 20%;
         
     }
+  .textarea-description{
+      margin-left: 4%;
+      width: 40%;
+      
+      
+  }
+  .input-product{
+    
+    width: 40%;
+    
+    
+}
+.title-tags{
+  
+    
+    font-family: futura-pt, sans-serif;
+
+font-weight: 200;
+font-size: x-large;
+font-style: normal;
+color: black;
+
+}
+
     
 }

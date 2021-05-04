@@ -59,27 +59,49 @@
     <div class="row" style="--bs-gutter-x: 0rem;">
       <div class="bg-image p-3 text-center shadow-1-strong col-md  text-white flex-item-left" style=" 
         background-size: 110%;  height: 90vh; flex: 1 1 0%;">
-        
+
         <div class="mb-3 image-upload">
-        <h1 class="title-add">Selecteer uw foto</h1>
-                <label for="postImage" class="form-label">Image</label>
-                <input type="file" class="form-control form-border" name="image" id="postImage" onchange="getImage(this);" />
-            </div>
+          <h1 class="title-add">Selecteer uw foto</h1>
+          <label for="postImage" class="form-label">Image</label>
+          <input type="file" class="form-control form-border" name="image" id="postImage" onchange="getImage(this);" />
+        </div>
       </div>
 
 
 
       <div class="col-md col-mobile">
+        <div>
+          <form action="">
+            <label class="title-add" for="">Naam product:</label>
+            <input type="name" name="name" class="input-product">
+          </form>
+        </div>
 
-        
 
-        
 
+        <div>
+          <form action="">
+            <label class="title-add" for="" id="description">Beschrijving:</label>
+            <textarea type="text" name="text" class="textarea-description"></textarea>
+          </form>
+        </div>
+
+        <form class="">
+          <label class="title-add" for="" id="tags">tags:</label>
+          <input  type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+         
+          <label  class="title-tags" for="vehicle1"> I have a bike</label>
+          <input  type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+          <label class="title-tags" for="vehicle2"> I have a car</label>
+          <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+          <label class="title-tags" for="vehicle3"> I have a boat</label>
+        </form>
       </div>
+
     </div>
 
   </div>
-</div>
+  </div>
 </body>
 <footer class="footer bg-light text-center text-lg-start">
   <!-- Copyright -->
