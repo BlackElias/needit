@@ -14,7 +14,7 @@
   <title>Document</title>
 </head>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light " style="background-color: white; box-shadow: 0px 3px 3px black;">
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: white; box-shadow: 0px 3px 3px black; font-family: futura-pt, sans-serif;font-weight: 700;">
 
   <!-- Navbar brand -->
 
@@ -46,6 +46,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link waves-effect waves-light" href="#">profiel</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-effect waves-light" href="#">Krediet: 10</a>
       </li>
     </ul>
   </div>

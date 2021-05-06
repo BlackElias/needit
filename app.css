@@ -128,6 +128,18 @@
     color: black;
     margin-left: 12%;
     }
+    
+    .title-add-service{
+        padding-top: 4%;
+        
+        font-family: futura-pt, sans-serif;
+
+    font-weight: 200;
+    font-size: xx-large;
+    font-style: normal;
+    color: black;
+    margin-left: 12%;
+    }
     #btn{
         margin-top: -20%;
     }
@@ -141,13 +153,26 @@
   .textarea-description{
       margin-left: 4%;
       width: 40%;
+      border-radius: 10px;
+    border: 1.6px solid #113332;
       
-      
+  }
+  .form-product{
+      margin-top: -11%;
   }
   .input-product{
     
     width: 40%;
+    border-radius: 10px;
+    border: 1.6px solid #113332;
     
+}
+.input-tags{
+    
+    width: 40%;
+    margin-left: 14%;
+    border-radius: 10px;
+    border: 1.6px solid #113332;
     
 }
 .title-tags{
@@ -161,6 +186,13 @@ font-style: normal;
 color: black;
 
 }
-
+.btn-product{
+    margin-top: 1%;
+    margin-left: 11%;
+}
+.btn-service{
+    margin-top: 9%;
+    margin-left: 11%;
+}
     
 }

@@ -14,7 +14,7 @@
   <title>Document</title>
 </head>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light " style="background-color: white; box-shadow: 0px 3px 3px black;">
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: white; box-shadow: 0px 3px 3px black; font-family: futura-pt, sans-serif;font-weight: 700;">
 
   <!-- Navbar brand -->
 
@@ -47,6 +47,9 @@
       <li class="nav-item">
         <a class="nav-link waves-effect waves-light" href="#">profiel</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link waves-effect waves-light" href="#">Krediet: 10</a>
+      </li>
     </ul>
   </div>
   <!-- Links -->
@@ -73,31 +76,29 @@
         <div>
           <form action="">
             <label class="title-add" for="">Naam product:</label>
-            <input type="name" name="name" class="input-product">
+            <input type="name" name="name" class="input-product" placeholder=" type hier iets">
           </form>
         </div>
 
 
 
         <div>
-          <form action="">
+          <form action="post" class="form-product">
             <label class="title-add" for="" id="description">Beschrijving:</label>
-            <textarea type="text" name="text" class="textarea-description"></textarea>
-          </form>
-        </div>
+            <textarea type="text" name="text" class="textarea-description"placeholder="type hier uw bericht"></textarea>
+          <br>
+        
 
-        <form class="">
-          <label class="title-add" for="" id="tags">tags:</label>
-          <input  type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+        
+          <label class="title-add-service" for="" id="tags" >tags:</label>
+          <input type="name" name="name" class="input-tags"placeholder=" #rood">
          
-          <label  class="title-tags" for="vehicle1"> I have a bike</label>
-          <input  type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-          <label class="title-tags" for="vehicle2"> I have a car</label>
-          <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-          <label class="title-tags" for="vehicle3"> I have a boat</label>
+          
+          <br>
+          <a href=""> <button class="article-button btn-product" type="submit" id="">Zet product online</button></a>
         </form>
       </div>
-
+</div>
     </div>
 
   </div>
