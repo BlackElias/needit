@@ -60,12 +60,7 @@
 <body>
   <div class="filter">
     <div class="row" style="--bs-gutter-x: 0rem;">
-      <div class="bg-image p-3 text-center shadow-1-strong col-md  text-white flex-item-left" style="background-color:#7a7f84 ;
-        background-size: 110%;  height: 90vh; flex: 0 1 0%;">
-        <h1>filters</h1>
-
-      </div>
-
+      
 
 
       <div class="col-md col-mobile">
