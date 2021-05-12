@@ -9,14 +9,14 @@ if (!empty($_POST)) {
     
     $user->setFirstname($_POST["firstname"]);
     $user->setLastname($_POST["lastname"]);
-    $user->setEmail($_POST["email"]);
-    $user->checkEmail();
+    
 
     
 
     $user->setPassword($_POST["password"]);
     $user->hashPassword();
-
+    $user->setEmail($_POST["email"]);
+    $user->checkEmail();
     $user->setStreetname($_POST["streetname"]);
     $user->setStreetnumber($_POST["streetnumber"]);
     $user->setCity($_POST["city"]);
@@ -34,6 +34,7 @@ if (!empty($_POST)) {
   }
 }
 
+var_dump($user);
 var_dump($user);
 
 ?>

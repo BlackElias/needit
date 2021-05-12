@@ -240,8 +240,8 @@ class User
     {
         $conn = Db::getConnection();
 
-        $sql = "INSERT INTO users (firstname, lastname, email, password, streetname, streetnumber, city) VALUES ( :firstname, :lastname, :email, :password, :streetname, :streetnumber, :city)";
-       echo $sql;
+        $sql = "INSERT INTO users (firstname, lastname, email, password, streetname, streetnumber, city) VALUES (:firstname, :lastname, :email, :password, :streetname, :streetnumber, :city)";
+ 
         $statement = $conn->prepare($sql);
        
         $firstname = $this->getFirstname();
@@ -251,9 +251,10 @@ class User
         $streetname = $this->getStreetname();
         $streetnumber = $this->getStreetnumber();
         $city = $this->getCity();
-        $statement->bindValue(":email", $email);
+        
         $statement->bindValue(":firstname", $firstname);
         $statement->bindValue(":lastname", $lastname);
+        $statement->bindValue(":email", $email);
         $statement->bindValue(":password", $password);
         $statement->bindValue(":streetname", $streetname);
         $statement->bindValue(":streetnumber", $streetnumber);
@@ -303,7 +304,7 @@ class User
         $statement->execute();
         $user = $statement->fetch(PDO::FETCH_ASSOC);
         if (empty($user)) {
-            throw new Exception(" No user is logged in.");
+            throw new Exception(" No user2 is logged in.");
         }
         return $user;
     }
