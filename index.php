@@ -88,33 +88,15 @@ try {
         </div>
 
         <div class="d-flex fllex-wrap" style="margin-left: 2%;">
-        <a href="" style="text-decoration: none;" class="article_clickable">
-          <div class="article ">
-          
-            <img src="<?php echo htmlspecialchars($post["picture"]) ?>" alt="" style="width: 200px; height: 200px;">
-            <h4>Item 1</h4>
-            <p>descr</p>
-          </div>
-          <div class="grey">
-            <p>
-            username
-            </p>
-          </div>
-        </a>
-
-        <a href="" style="text-decoration: none;" class="article_clickable">
-          <div class="article ">
-          
-            <img src="img/background.png" alt="" style="width: 200px; height: 200px;">
-            <h4>Item 2</h4>
-            <p>descr</p>
-          </div>
-          <div class="grey">
-            <p>
-            username
-            </p>
-          </div>
-        </a>
+        <?php
+         $feed = Post::getFeedPosts();
+         $i = 0;
+         foreach ($feed as $post) : if ($i == 20) {
+               break;
+            } ?>
+            <?php include("post.inc.php") ?>
+         <?php $i++;
+         endforeach; ?>
 
         
 
