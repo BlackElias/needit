@@ -1,25 +1,5 @@
-<?php
 
-include_once("bootstrap.php");
-
-if (!empty($_POST)) {
-  try {
-    $user = new User();
-    $user->setEmail($_POST["email"]);
-    $user->setFirstname($_POST["firstName"]);
-    $user->setLastname($_POST["lastName"]);
-    $user->setUsername($_POST["username"], "signup");
-    $user->setPassword($_POST["password"], "signup");
-    $user->save();
-    session_start();
-    $_SESSION["username"] = $user->getUsername();
-    header("Location: index.php");
-  } catch (\Throwable $th) {
-    $error = $th->getMessage();
-  }
-}
-
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -52,7 +32,11 @@ if (!empty($_POST)) {
     </div>
 </nav>
 <body>
-  
+  <?php
+	session_start();
+	session_destroy();
+	header("Location: login.php");
+?>
 </body>
 <footer class="footer bg-light text-center text-lg-start">
         <!-- Copyright -->

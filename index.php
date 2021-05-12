@@ -1,3 +1,14 @@
+<?php //if session als sessie ni besta moe ge target hebbe naar home ?>
+<?php
+include_once("bootstrap.php");
+try {
+   $user = new User();
+   $currentUserId = $_SESSION["userId"];
+   $currentUser = $user->getUserInfo($currentUserId);
+} catch (\Throwable $th) {
+   $error = $th->getMessage();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,13 +50,13 @@
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link waves-effect waves-light" href="#">Home</a>
+        <a class="nav-link waves-effect waves-light" href="index.php">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-effect waves-light" href="#">verzoek/toevoegen</a>
+        <a class="nav-link waves-effect waves-light" href="choose-article.php">verzoek/toevoegen</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-effect waves-light" href="#">profiel</a>
+        <a class="nav-link waves-effect waves-light" href="profile.php">profiel</a>
       </li>
       <li class="nav-item">
         <a class="nav-link waves-effect waves-light" href="#">Krediet: 10</a>
@@ -80,7 +91,7 @@
         <a href="" style="text-decoration: none;" class="article_clickable">
           <div class="article ">
           
-            <img src="img/background.png" alt="" style="width: 200px; height: 200px;">
+            <img src="<?php echo htmlspecialchars($post["picture"]) ?>" alt="" style="width: 200px; height: 200px;">
             <h4>Item 1</h4>
             <p>descr</p>
           </div>

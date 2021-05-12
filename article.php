@@ -35,17 +35,16 @@
 
 
   <div class="navbar-collapse collapse" id="basicExampleNav" style="margin-left: 25%;">
-
-    <!-- Links -->
-    <ul class="navbar-nav mr-auto">
+ <!-- Links -->
+ <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link waves-effect waves-light" href="#">Home</a>
+        <a class="nav-link waves-effect waves-light" href="index.php">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-effect waves-light" href="#">verzoek/toevoegen</a>
+        <a class="nav-link waves-effect waves-light" href="choose-article.php">verzoek/toevoegen</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-effect waves-light" href="#">profiel</a>
+        <a class="nav-link waves-effect waves-light" href="profile.php">profiel</a>
       </li>
       <li class="nav-item">
         <a class="nav-link waves-effect waves-light" href="#">Krediet: 10</a>

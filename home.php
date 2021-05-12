@@ -1,5 +1,42 @@
 
+<?php
 
+include_once("bootstrap.php");
+
+if (!empty($_POST)) {
+  try {
+    $user = new User();
+    
+    $user->setFirstname($_POST["firstname"]);
+    $user->setLastname($_POST["lastname"]);
+    $user->setEmail($_POST["email"]);
+    $user->checkEmail();
+
+    
+
+    $user->setPassword($_POST["password"]);
+    $user->hashPassword();
+
+    $user->setStreetname($_POST["streetname"]);
+    $user->setStreetnumber($_POST["streetnumber"]);
+    $user->setCity($_POST["city"]);
+    
+    $user->save();
+
+    $email = $user->getEmail();
+    $currentUser = $user->getLoggedUser($email);
+    session_start();
+    $_SESSION["userId"] = $currentUser["id"];
+
+    header("Location: index.php");
+  } catch (\Throwable $th) {
+    $error = $th->getMessage();
+  }
+}
+
+var_dump($user);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,44 +93,53 @@ moeite waard.</p>
   <div class="form-signup wrapper">
   <form method="POST" class="wrapper-medium"> 
   <?php if (isset($error)) : ?>
-    <div class="error">
-      <h3><?php echo $error ?></h3>
+    <div class="user-messages-area">
+      <div class="alert alert-danger">
+        <ul>
+          <li><?php echo $error ?></li>
+        </ul>
+      </div>
     </div>
   <?php endif; ?>
   <div class="mb-3 font">
     
       <h1 class="title-left">Meld je aan!</h1>
-    <label for="username" class="form-label">Gebruikersnaam</label>
-    <input type="name" class="form-control black-border" style="border-radius: 10px;" id="username" >
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <label for="username" class="form-label">Voornaam</label>
+    <input type="name" name="firstname" class="form-control black-border" style="border-radius: 10px;" id="username" >
+    
   </div>
-
+  <div class="mb-3 font">
+  
+  <label for="username" class="form-label">Achternaam</label>
+  <input type="name" name="lastname" class="form-control black-border" style="border-radius: 10px;" id="username" >
+ 
+</div>
   <div class="mb-3 font ">
     <label for="exampleInputPassword1" class="form-label">Email</label>
-    <input type="email" class="form-control black-border" style="border-radius: 10px;" id="exampleInputPassword1">
+    <input type="email" name="email" class="form-control black-border" style="border-radius: 10px;" id="exampleInputPassword1">
   </div>
 
   <div class="mb-3 font ">
     <label for="exampleInputEmail1" class="form-label">Passwoord</label>
-    <input type="password" class="form-control black-border" style="border-radius: 10px;" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="password" name="password" class="form-control black-border" style="border-radius: 10px;" id="exampleInputEmail1" aria-describedby="emailHelp">
     
   </div>
 
   <div class="mb-3 font ">
     <label for="exampleInputEmail1" class="form-label">Straatnaam</label>
-    <input type="ship-address" class="form-control black-border" style="border-radius: 10px;" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="ship-address" name="streetname" class="form-control black-border" style="border-radius: 10px;" id="exampleInputEmail1" aria-describedby="emailHelp">
     
   </div>
 
   <div class="mb-3 font float-end">
     <label for="exampleInputEmail1" class="form-label">Straat nummer</label>
-    <input type="number" class="form-control black-border w-50" style="border-radius: 10px;" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="number" name="streetnumber" class="form-control black-border w-50" style="border-radius: 10px;" id="exampleInputEmail1" aria-describedby="emailHelp">
     
   </div>
 
   <div class="mb-3 font ">
     <label for="exampleInputEmail1" class="form-label">Postcode</label>
-    <input type="ship-zip" class="form-control black-border w-25" style="border-radius: 10px;" id="exampleInputEmail1" aria-describedby="ship-zip">
+    <input type="ship-zip" name="city" class="form-control black-border w-25" style="border-radius: 10px;" id="exampleInputEmail1" aria-describedby="ship-zip">
     
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>

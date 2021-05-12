@@ -45,7 +45,7 @@
 
 
 
-       <!-- <div class="col-md " style=" ">
+    <div class="col-md " style=" ">
 
             <h1 class=" p-3 text-center">Over ons</h1>
            <div class="offset-md-2">
@@ -62,7 +62,7 @@
           
         </div>
     </div>
--->
+
     <footer class="footer bg-light text-center text-lg-start">
         <!-- Copyright -->
         <div class="text-center text-white p-3" style="color:white; background-color: #252523; box-shadow: 0px 0px 6px grey;">

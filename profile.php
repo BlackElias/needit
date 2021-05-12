@@ -1,3 +1,25 @@
+<?php
+include_once("bootstrap.php");
+$conn = Db::getConnection();
+try {
+    $user = new User();
+    $currentUserId = $_SESSION["userId"];
+    $currentUser = $user->getUserInfo($currentUserId);
+    if (!empty($_POST)) {
+     // picture upload
+     if (!empty($_FILES["profilePicture"]["name"])) {
+      $profilePicture = $user->uploadProfilePicture($_FILES["profilePicture"]["name"]);
+      $user->setPicture($profilePicture);
+  } // User updates
+  $user->updateInfo($currentUser['id']);
+
+  $currentUser = $user->getUserInfo($currentUserId); //---Updated User Fetch---
+};    
+    
+} catch (\Throwable $th) {
+    $error = $th->getMessage();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,16 +58,16 @@
 
   <div class="navbar-collapse collapse" id="basicExampleNav" style="margin-left: 25%;">
 
-    <!-- Links -->
-    <ul class="navbar-nav mr-auto">
+     <!-- Links -->
+     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link waves-effect waves-light" href="#">Home</a>
+        <a class="nav-link waves-effect waves-light" href="index.php">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-effect waves-light" href="#">verzoek/toevoegen</a>
+        <a class="nav-link waves-effect waves-light" href="choose-article.php">verzoek/toevoegen</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-effect waves-light" href="#">profiel</a>
+        <a class="nav-link waves-effect waves-light" href="profile.php">profiel</a>
       </li>
       <li class="nav-item">
         <a class="nav-link waves-effect waves-light" href="#">Krediet: 10</a>
@@ -59,27 +81,38 @@
 
 <body style="background-color: #F9F7F7;">
   <div class="filter">
+  
     <div class="row" style="--bs-gutter-x: 0rem;">
       <div class="bg-image p-3 text-center shadow-1-strong col-md  text-white flex-item-left" style=" 
         background-size: 110%;  height: 90vh; flex: 1 1 0%;">
 
+                        
+                       
+                    
         <div class="mb-3 image-upload">
           <h1 class="title-add">Selecteer uw profiel foto</h1>
           <label for="postImage" class="form-label">Image</label>
-         <form> <input type="file" class="form-control form-border" name="image" id="postImage" onchange="getImage(this);" /></form>
+         <form> <input type="file" class="form-control form-border" name="image" id="postImage" />
+         <button class="article-button btn-product" type="submit" id="">verander foto</button></form>
         </div>
       </div>
-
+      
 
 
       <div class="col-md col-mobile">
         <div>
-          
-            <label class="title-add" for="">Geleende producten</label>
+        
+            <label class="title-add" for=""><?php echo htmlspecialchars($currentUser["firstname"]) . " " .  htmlspecialchars($currentUser["lastname"]) ?></label>
             
         </div>
 
+        <div class="col-md col-mobile">
+        <div>
+        
 
+            <label class="title-add" for="">Geleende producten</label>
+            
+        </div>
 
         <div>
           

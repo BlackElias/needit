@@ -1,3 +1,27 @@
+
+<?php
+include_once("bootstrap.php");
+
+if (!empty($_POST)) {
+    try {
+        $post = new Post();
+        $post->setUserId($_SESSION["userId"]);
+        $post->setTitle($_SESSION["title"]);
+        $post->setDescription($_POST["description"]);
+        $tags = $post->cleanupTags($_POST["tags"]);
+        $post->setTags($tags);
+        
+        $image = $post->saveImage($_FILES["image"]["name"], $type);
+        $post->setImage($image);
+        
+        $post->save();
+        header("Location: index.php");
+    } catch (\Throwable $th) {
+        $error = $th->getMessage();
+    }
+}
+var_dump($post)
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,16 +60,16 @@
 
   <div class="navbar-collapse collapse" id="basicExampleNav" style="margin-left: 25%;">
 
-    <!-- Links -->
-    <ul class="navbar-nav mr-auto">
+   <!-- Links -->
+   <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link waves-effect waves-light" href="#">Home</a>
+        <a class="nav-link waves-effect waves-light" href="index.php">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-effect waves-light" href="#">verzoek/toevoegen</a>
+        <a class="nav-link waves-effect waves-light" href="choose-article.php">verzoek/toevoegen</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-effect waves-light" href="#">profiel</a>
+        <a class="nav-link waves-effect waves-light" href="profile.php">profiel</a>
       </li>
       <li class="nav-item">
         <a class="nav-link waves-effect waves-light" href="#">Krediet: 10</a>
@@ -62,11 +86,11 @@
     <div class="row" style="--bs-gutter-x: 0rem;">
       <div class="bg-image p-3 text-center shadow-1-strong col-md  text-white flex-item-left" style=" 
         background-size: 110%;  height: 90vh; flex: 1 1 0%;">
-
+    <form action="POST">
         <div class="mb-3 image-upload">
           <h1 class="title-add">Selecteer uw foto</h1>
           <label for="postImage" class="form-label">Image</label>
-          <input type="file" class="form-control form-border" name="image" id="postImage" onchange="getImage(this);" />
+          <input type="file" class="form-control form-border" name="image" id="postImage">
         </div>
       </div>
 
@@ -74,28 +98,28 @@
 
       <div class="col-md col-mobile">
         <div>
-          <form action="">
+          
             <label class="title-add" for="">Naam product:</label>
-            <input type="name" name="name" class="input-product" placeholder=" type hier iets">
-          </form>
+            <input type="name" name="title" class="input-product" placeholder=" type hier iets">
+          
         </div>
 
 
 
         <div>
-          <form action="post" class="form-product">
+         
             <label class="title-add" for="" id="description">Beschrijving:</label>
-            <textarea type="text" name="text" class="textarea-description"placeholder="type hier uw bericht"></textarea>
+            <textarea type="text" name="descriptions" class="textarea-description"placeholder="type hier uw bericht"></textarea>
           <br>
         
 
         
           <label class="title-add-service" for="" id="tags" >tags:</label>
-          <input type="name" name="name" class="input-tags"placeholder=" #rood">
+          <input type="name" name="tags" class="input-tags"placeholder=" #rood">
          
           
           <br>
-          <a href=""> <button class="article-button btn-product" type="submit" id="">Zet product online</button></a>
+           <button class="article-button btn-product" type="submit" id="">Zet product online</button>
         </form>
       </div>
 </div>
@@ -112,5 +136,5 @@
   </div>
   <!-- Copyright -->
 </footer>
-
+<script src="scripts/new_post.js"></script>
 </html>

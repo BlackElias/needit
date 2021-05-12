@@ -1,3 +1,24 @@
+<?php
+include_once("bootstrap.php");
+
+if (!empty($_POST)) {
+    try {
+        $user = new User();
+
+        $user->setEmail($_POST["email"]);
+        $user->setPassword($_POST["password"]);
+        $user->canlogin();
+        session_start();
+        $username = $user->getEmail();
+        $currentUser = $user->getLoggedUser($username);
+        session_start();
+        $_SESSION["userId"] = $currentUser["id"];
+        header("Location: index.php");
+    } catch (\Throwable $th) {
+        $error = $th->getMessage();
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,12 +60,12 @@
     <h1 class="title-left"> Log in</h1>
   <div class="mb-3 font ">
     <label for="exampleInputPassword1" class="form-label ">Email</label>
-    <input type="email" class="form-control black-border w-30" style="border-radius: 10px;" id="exampleInputPassword1">
+    <input type="email" name="email" class="form-control black-border w-30" style="border-radius: 10px;" id="exampleInputPassword1">
   </div>
 
   <div class="mb-3 font ">
     <label for="exampleInputEmail1" class="form-label ">Passwoord</label>
-    <input type="pasword" class="form-control black-border w-30" style="border-radius: 10px;" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="pasword" name="password" class="form-control black-border w-30" style="border-radius: 10px;" id="exampleInputEmail1" aria-describedby="emailHelp">
     
   </div>
 

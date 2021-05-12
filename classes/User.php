@@ -3,49 +3,119 @@ include_once(__DIR__ . "/Db.php");
 
 class User
 {
-    private $username;
+    private $userId;
     private $firstname;
     private $lastname;
     private $password;
     private $email;
     private $picture;
-    private $description;
+    private $streetname;
+    private $streetnumber;
+    private $city;
 
     /**
-     * Get the value of username
+     * Get the value of userId
      */
-    public function getUsername()
+    public function getUserId()
     {
-        return $this->username;
+        return $this->userId;
     }
 
     /**
-     * Set the value of username
+     * Set the value of userId
      *
      * @return  self
      */
-    public function setUsername($username, $action)
+    public function setUserId($userId)
     {
-        //CHECK IF EMPTY
-        if (empty($username)) {
-            throw new Exception("Username may not be empty!");
-        }
-        //CHECK IF USERNAME IS AVAILABLE
-        if ($action === "signup") {
-            $conn = Db::getConnection();
-            $statement = $conn->prepare("select * from users where username = :username");
-            $statement->bindValue(":username", $username);
-            $statement->execute();
-            $result = $statement->fetch();
-            if ($result != false) {
-                throw new Exception("Username is already being used, please try a different one");
-            }
-        }
-        $this->username = $username;
+        $this->userId = $userId;
+
+        return $this;
+    }
+  
+
+   
+ /**
+     * Get the value of picture
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * Set the value of picture
+     *
+     * @return  self
+     */
+    public function setPicture($picture)
+    {
+        $this->picture = $picture;
+
+        return $this;
+    }
+    
+
+    /**
+     * Get the value of streetname
+     */ 
+    public function getStreetname()
+    {
+        return $this->streetname;
+    }
+
+    /**
+     * Set the value of streetname
+     *
+     * @return  self
+     */ 
+    public function setStreetname($streetname)
+    {
+        $this->streetname = $streetname;
+
         return $this;
     }
 
+    /**
+     * Get the value of streetnumber
+     */ 
+    public function getStreetnumber()
+    {
+        return $this->streetnumber;
+    }
 
+    /**
+     * Set the value of streetnumber
+     *
+     * @return  self
+     */ 
+    public function setStreetnumber($streetnumber)
+    {
+        $this->streetnumber = $streetnumber;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of city
+     */ 
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set the value of city
+     *
+     * @return  self
+     */ 
+    public function setCity($city)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+    
 
     /**
      * Get the value of firstname
@@ -106,20 +176,22 @@ class User
      *
      * @return  self
      */
-    public function setPassword($password, $action)
+    public function setPassword($password)
     {
         if (empty($password)) {
             throw new Exception("Password may not be empty!");
         }
+        $this->password = $password;
+        return $this;
+    }
 
-        if ($action === "signup") {
-            $options = [
-                'cost' => 14,
-            ];
-            $this->password = password_hash($password, PASSWORD_DEFAULT, $options);
-        } else {
-            $this->password = $password;
-        }
+    public function hashPassword()
+    {
+        $password = $this->getPassword();
+        $options = [
+            'cost' => 14,
+        ];
+        $this->password = password_hash($password, PASSWORD_DEFAULT, $options);
         return $this;
     }
 
@@ -141,6 +213,14 @@ class User
         if (empty($email)) {
             throw new Exception("Email may not be empty!");
         }
+        $this->email = $email;
+
+        return $this;
+    }
+
+    public function checkEmail()
+    {
+        $email = $this->getEmail();
         $conn = Db::getConnection();
         $statement = $conn->prepare("select * from users where email = :email");
         $statement->bindValue(":email", $email);
@@ -154,44 +234,159 @@ class User
         return $this;
     }
 
+    
+
     public function save()
     {
         $conn = Db::getConnection();
 
-        $sql = "INSERT INTO users (email, firstname, lastname, username, password) VALUES (:email, :firstname, :lastname, :username, :password)";
+        $sql = "INSERT INTO users (firstname, lastname, email, password, streetname, streetnumber, city) VALUES ( :firstname, :lastname, :email, :password, :streetname, :streetnumber, :city)";
+       echo $sql;
         $statement = $conn->prepare($sql);
-        $email = $this->getEmail();
+       
         $firstname = $this->getFirstname();
         $lastname = $this->getLastname();
-        $username = $this->getUsername();
+        $email = $this->getEmail();
         $password = $this->getPassword();
-
-
+        $streetname = $this->getStreetname();
+        $streetnumber = $this->getStreetnumber();
+        $city = $this->getCity();
         $statement->bindValue(":email", $email);
         $statement->bindValue(":firstname", $firstname);
         $statement->bindValue(":lastname", $lastname);
-        $statement->bindValue(":username", $username);
         $statement->bindValue(":password", $password);
-        $result = $statement->execute();
+        $statement->bindValue(":streetname", $streetname);
+        $statement->bindValue(":streetnumber", $streetnumber);
+        $statement->bindValue(":city", $city);
+        $statement->execute();
     }
 
-    public function login()
+    public function canLogin()
     {
         $conn = Db::getConnection();
 
-        $sql = "SELECT username, password FROM users WHERE username = :username";
+        $sql = "SELECT email, password FROM users WHERE email = :email";
         $statement = $conn->prepare($sql);
-
-        $username = $this->getUsername();
+        $email = $this->getEmail();
         $password = $this->getPassword();
-
-        $statement->bindValue(":username", $username);
+        $statement->bindValue(":email", $email);
         $statement->execute();
         $result = $statement->fetchAll();
         $hash = $result[0]['password'];
 
         if (!password_verify($password, $hash)) {
-            throw new Exception("Username or password is incorrect!");
+            throw new Exception("email or password is incorrect!");
         }
     }
+
+   
+
+    //Get current active user
+    public function getLoggedUser($email)
+    {
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("SELECT * FROM users WHERE email = :email");
+        $statement->bindValue(":email", $email);
+        $statement->execute();
+        $user = $statement->fetch(PDO::FETCH_ASSOC);
+        if (empty($user)) {
+            throw new Exception(" No user is logged in.");
+        }
+        return $user;
+    }
+
+    public function getUserInfo($userId)
+    {
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("SELECT * FROM users WHERE id = :userId");
+        $statement->bindValue(":userId", $userId);
+        $statement->execute();
+        $user = $statement->fetch(PDO::FETCH_ASSOC);
+        if (empty($user)) {
+            throw new Exception(" No user is logged in.");
+        }
+        return $user;
+    }
+
+    
+
+    public function verifyPassword($currentUserId)
+    {
+
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("SELECT password FROM users WHERE id = :currentUserId");
+
+        $password = $this->getPassword();
+
+        $statement->bindValue(":currentUserId", $currentUserId);
+        $statement->execute();
+
+        $result = $statement->fetchAll();
+        $hash = $result[0]['password'];
+
+        if (!password_verify($password, $hash)) {
+            throw new Exception("Current password is incorrect!");
+        }
+    }
+    public function updateInfo($currentUserId)
+    {
+
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("UPDATE users SET  picture = :picture WHERE id = :currentUserId");
+        $statement->bindValue(":currentUserId", $currentUserId);
+
+        
+        $picture = $this->getPicture();
+
+        
+        $statement->bindValue(":picture", $picture);
+
+        $user = $statement->execute();
+
+        return $user;
+    }
+    public function updatePassword($currentUserId)
+    {
+        $conn = Db::getConnection();
+
+        $statement = $conn->prepare("UPDATE users SET password = :password WHERE id = :currentUserId");
+        $statement->bindValue(":currentUserId", $currentUserId);
+
+        $password = $this->getPassword();
+        $statement->bindValue(":password", $password);
+
+        $user = $statement->execute();
+
+        return $user;
+    }
+    
+    
+   
+
+
+    public function uploadProfilePicture($profilepicture)
+    {
+        if (!empty($_FILES["profilePicture"]["name"])) {
+            $target_dir = "uploads/profilePictures/";
+            $file = $profilepicture;
+            $path = pathinfo($file);
+            $firstname = $this->getFirstname();
+            $ext = $path["extension"];
+            $temp_name = $_FILES["profilePicture"]["tmp_name"];
+            $filename = $firstname . "_" . "profilepicture" . "_" . mt_rand(100000, 999999);
+            $path_filename_ext = $target_dir . $filename . "." . $ext;
+
+            while (file_exists($path_filename_ext)) {
+                $filename = $firstname . "_" . "profilepicture" . "_" . mt_rand(100000, 999999);
+                $path_filename_ext = $target_dir . $filename . "." . $ext;
+            }
+            move_uploaded_file($temp_name, $path_filename_ext);
+            if (!$path_filename_ext) {
+                throw new Exception("Something went wrong when uploading the picture, please try again later");
+            }
+        }
+        return $path_filename_ext;
+    }
+
+   
 }
