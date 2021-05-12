@@ -8,10 +8,7 @@ if (!empty($_POST)) {
     $user = new User();
     
     $user->setFirstname($_POST["firstname"]);
-    $user->setLastname($_POST["lastname"]);
-    
-
-    
+    $user->setLastname($_POST["lastname"]);   
 
     $user->setPassword($_POST["password"]);
     $user->hashPassword();
