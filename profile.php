@@ -120,7 +120,7 @@ try {
             <a href=""> <button class="article-button btn-product" type="submit" id="">Zie product</button></a>
           <br>
         
-
+          <a href="signup.php"> <button class="article-button btn-product" type="submit" id="">uitloggen</button></a>
         
         
           

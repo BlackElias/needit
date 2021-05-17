@@ -95,37 +95,7 @@ class Post
         return $this;
     }
 
-    public function saveImage($image)
-    {
-        //CHECK IF EMPTY
-        if (empty($_FILES["image"]["name"])) {
-            throw new Exception("An image upload is required!");
-        }
-
-        $target_dir = "uploads/posts/";
-        $file = $image;
-        $path = pathinfo($file);
-        $id = $this->getUserId();
-        $ext = $path['extension'];
-        $temp_name = $_FILES['image']['tmp_name'];
-
-        //APPLY FILTER
-        
-        //SET FILENAME
-        $filename = "post_" . $id . "_" . mt_rand(100000, 999999);
-        $path_filename_ext = $target_dir . $filename . "." . $ext;
-        //CHECK IF FILENAME EXCISTS
-        while (file_exists($path_filename_ext)) {
-            $filename = "post_" . $id . "_" . mt_rand(100000, 999999);
-            $path_filename_ext = $target_dir . $filename . "." . $ext;
-        }
-        //MOVE TO FOLDER
-        move_uploaded_file($temp_name, $path_filename_ext);
-        if (!$path_filename_ext) {
-            throw new Exception("Something went wrong when uploading the image, please try again later");
-        }
-        return $path_filename_ext;
-    }
+   
 
     /**
      * Get the value of image
@@ -233,7 +203,37 @@ class Post
 
         return $this;
     }
+ public function saveImage($image)
+    {
+        //CHECK IF EMPTY
+        if (empty($_FILES["image"]["name"])) {
+            throw new Exception("An image upload is required!");
+        }
 
+        $target_dir = "uploads/posts/";
+        $file = $image;
+        $path = pathinfo($file);
+        $id = $this->getUserId();
+        $ext = $path['extension'];
+        $temp_name = $_FILES['image']['tmp_name'];
+
+      
+        
+        //SET FILENAME
+        $filename = "post_" . $id . "_" . mt_rand(100000, 999999);
+        $path_filename_ext = $target_dir . $filename . "." . $ext;
+        //CHECK IF FILENAME EXCISTS
+        while (file_exists($path_filename_ext)) {
+            $filename = "post_" . $id . "_" . mt_rand(100000, 999999);
+            $path_filename_ext = $target_dir . $filename . "." . $ext;
+        }
+        //MOVE TO FOLDER
+        move_uploaded_file($temp_name, $path_filename_ext);
+        if (!$path_filename_ext) {
+            throw new Exception("Something went wrong when uploading the image, please try again later");
+        }
+        return $path_filename_ext;
+    }
     public function savePosts()
     {
         $conn = Db::getConnection();
