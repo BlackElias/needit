@@ -1,24 +1,12 @@
-<?php
+<?php 
 include_once("bootstrap.php");
-
-if (!empty($_POST)) {
-    try {
-        $service = new Service();
-        $service->setUserId($_SESSION["userId"]);
-        $service->setDescription($_POST["description"]);
-        $service->setTitle($_POST["title"]);
-       
-        
-     
-        
-        $service->saveServices();
-        header("Location: index.php");
-    } catch (\Throwable $th) {
-        $error = $th->getMessage();
-    }var_dump($service);
+try {
+   $user = new User();
+   $currentUserId = $_SESSION["userId"];
+   $currentUser = $user->getUserInfo($currentUserId);
+} catch (\Throwable $th) {
+   $error = $th->getMessage();
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,9 +45,8 @@ if (!empty($_POST)) {
 
 
   <div class="navbar-collapse collapse" id="basicExampleNav" style="margin-left: 25%;">
-
-    <!-- Links -->
-    <ul class="navbar-nav mr-auto">
+ <!-- Links -->
+ <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link waves-effect waves-light" href="index.php">Home</a>
       </li>
@@ -79,39 +66,45 @@ if (!empty($_POST)) {
 </nav>
 <!-- Navbar -->
 
-<body style="background-color: #F9F7F7;">
+<body>
   <div class="filter">
     <div class="row" style="--bs-gutter-x: 0rem;">
-      <div class="bg-image p-3 text-center shadow-1-strong col-md  text-white flex-item-left" style=" 
-        background-size: 110%;  height: 90vh; flex: 1 1 0%;">
+      <div class="bg-image p-3 text-center shadow-1-strong col-md  text-white flex-item-left" style="background-color:#7a7f84 ;
+        background-size: 110%;  height: 90vh; flex: 0 1 0%;">
+        <h1>filters</h1>
 
-        <div class="mb-3 image-upload">
-          <h1 class="title-add">Selecteer uw foto</h1>
-          <label for="postImage" class="form-label">Image</label>
-          <input type="file" class="form-control form-border" name="image" id="postImage" onchange="getImage(this);" />
-        </div>
       </div>
 
 
 
       <div class="col-md col-mobile">
-        <div>
-          <form action="" method="POST">
-            <label class="title-add" for="">Naam product:</label>
-            <input type="name" name="title" class="input-product" placeholder=" type hier iets">
+
+       
+       
+        
+          <div class="article-detail ">
           
-            <label class="title-add-service" for="" id="description">Beschrijving:</label>
-            <textarea type="text" name="description" class="textarea-description"placeholder="type hier uw bericht"></textarea>
-           <br>
-            <a href=""> <button class="article-button btn-service " type="submit" id="">Zet dienst online</button></a>
-        </form>
-        </div>
+            <img src="<?php echo ($post["image"]) ?>" alt="" style=" " class="float-start article-image">
+            <div class="grey">
+            <h4 ><?php echo htmlspecialchars($_GET["title"]) ?></h4>
+            <p><?php echo htmlspecialchars($_GET['description'])  ?></p>
+            <button class="article-button" id="btn-left">Leen het nu</button>
+            
+            </div>
+          </div>
+          
+           
+          </div>
+        
 
+        
+        
 
+      </div>
     </div>
 
   </div>
-  </div>
+</div>
 </body>
 <footer class="footer bg-light text-center text-lg-start">
   <!-- Copyright -->

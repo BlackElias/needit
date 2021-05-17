@@ -67,8 +67,8 @@
 
 
       <div class=" btns">
-     <a href=""> <button class="article-button" id="btn-right">Leen het nu</button></a>
-     <a href=""> <button class="article-button" id="btn-center">Leen het nu</button></a>
+     <a href="add-article.php"> <button class="article-button" id="btn-right">Leen het nu</button></a>
+     <a href="add-service.php"> <button class="article-button" id="btn-center">Leen het nu</button></a>
      <a href=""> <button class="article-button" id="btn">Leen het nu</button></a>
 
         </div>

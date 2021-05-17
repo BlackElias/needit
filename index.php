@@ -89,9 +89,11 @@ try {
 
         <div class="d-flex fllex-wrap" style="margin-left: 2%;">
         <?php
+       
          $feed = Post::getFeedPosts();
          $i = 0;
-         foreach ($feed as $post) : if ($i == 20) {
+        
+         foreach ($feed as $id => $post) : if ($i == 20) {
                break;
             } ?>
             <?php include("post.inc.php") ?>

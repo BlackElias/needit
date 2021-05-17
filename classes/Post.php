@@ -95,7 +95,7 @@ class Post
         return $this;
     }
 
-    public function saveImage($image, $type)
+    public function saveImage($image)
     {
         //CHECK IF EMPTY
         if (empty($_FILES["image"]["name"])) {
@@ -110,31 +110,7 @@ class Post
         $temp_name = $_FILES['image']['tmp_name'];
 
         //APPLY FILTER
-        if ($ext === "png") {
-
-
-            $img = imagecreatefrompng($temp_name);
-            switch ($type) {
-                case 'IMG_FILTER_NEGATE':
-                    imagefilter($img, IMG_FILTER_NEGATE);
-                    break;
-                case 'IMG_FILTER_GRAYSCALE':
-                    imagefilter($img, IMG_FILTER_GRAYSCALE);
-                    break;
-                case 'IMG_FILTER_COLORIZE':
-                    imagefilter($img, IMG_FILTER_COLORIZE, 50, 0, 0);
-                    break;
-                case 'IMG_FILTER_MEAN_REMOVAL':
-                    imagefilter($img, IMG_FILTER_MEAN_REMOVAL);
-                    break;
-                case 'IMG_FILTER_EMBOSS':
-                    imagefilter($img, IMG_FILTER_EMBOSS);
-                    break;
-                default:
-                    break;
-            }
-            imagepng($img, $temp_name);
-        }
+        
         //SET FILENAME
         $filename = "post_" . $id . "_" . mt_rand(100000, 999999);
         $path_filename_ext = $target_dir . $filename . "." . $ext;
@@ -258,7 +234,7 @@ class Post
         return $this;
     }
 
-    public function save()
+    public function savePosts()
     {
         $conn = Db::getConnection();
 
@@ -277,40 +253,33 @@ class Post
         $statement->bindValue(":title", $title);
         $statement->execute();
     }
-
-    public function flag()
+  
+  
+    public function saveServices()
     {
         $conn = Db::getConnection();
 
-        $sql = "UPDATE posts SET inappropriate = 1 WHERE id = :id";
+        $sql = "INSERT INTO services (user_id, title, description, image) VALUES (:user_id, :title, :description, :image)";
         $statement = $conn->prepare($sql);
+        $user_id = $this->getUserId();
+        $image = $this->getImage();
+        $description = $this->getDescription();
+       
+        $title = $this->getTitle();
 
-        $id = $this->getPostId();
-        $statement->bindValue(":id", $id);
+        $statement->bindValue(":user_id", $user_id);
+        $statement->bindValue(":image", $image);
+        $statement->bindValue(":description", $description);
+     
+        $statement->bindValue(":title", $title);
         $statement->execute();
-
-        return $this;
     }
-
-    public function delete()
-    {
-        $conn = Db::getConnection();
-
-        $sql = "DELETE FROM posts WHERE id = :id";
-        $statement = $conn->prepare($sql);
-
-        $id = $this->getPostId();
-        $statement->bindValue(":id", $id);
-        $statement->execute();
-
-        return $this;
-    }
-
+  
     public static function getFeedPosts()
     {
         $conn = Db::getConnection();
 
-        $sql = "SELECT *, posts.id as postId FROM posts JOIN users ON users.id=posts.user_id WHERE  user_id != :user_id  created DESC;";
+        $sql = "SELECT *, posts.id as postId FROM posts JOIN users ON users.id=posts.user_id WHERE  user_id != :user_id  ;";
         $statement = $conn->prepare($sql);
         $user_id = $_SESSION["userId"];
 
@@ -318,6 +287,19 @@ class Post
         $statement->execute();
         $posts = $statement->fetchAll();
         return $posts;
+    }
+    public static function getFeedServices()
+    {
+        $conn = Db::getConnection();
+
+        $sql = "SELECT *, services.id as servicesId FROM services JOIN users ON users.id=services.user_id WHERE  user_id != :user_id  ;";
+        $statement = $conn->prepare($sql);
+        $user_id = $_SESSION["userId"];
+
+        $statement->bindValue(":user_id", $user_id);
+        $statement->execute();
+        $service = $statement->fetchAll();
+        return $service;
     }
 
     public static function getUserPosts($user_id)

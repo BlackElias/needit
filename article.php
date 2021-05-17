@@ -1,3 +1,14 @@
+<?php 
+include_once("bootstrap.php");
+try {
+   $user = new User();
+   $currentUserId = $_SESSION["userId"];
+   $currentUser = $user->getUserInfo($currentUserId);
+} catch (\Throwable $th) {
+   $error = $th->getMessage();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,13 +85,16 @@
         
           <div class="article-detail ">
           
-            <img src="img/background.png" alt="" style=" " class="float-start article-image">
+            <img src="<?php echo ($post["image"]) ?>" alt="" style=" " class="float-start article-image">
             <div class="grey">
-            <h4 >Item 1</h4>
-            <p>descr</p>
+            <h4 ><?php echo htmlspecialchars($_GET["title"]) ?></h4>
+            <p><?php echo htmlspecialchars($_GET['description'])  ?></p>
+            <p><?php echo htmlspecialchars($_GET['firstname'])  ?><?php echo htmlspecialchars($_GET['lastname'])  ?></p>
             <button class="article-button" id="btn-left">Leen het nu</button>
             
             </div>
+            
+
           </div>
           
            

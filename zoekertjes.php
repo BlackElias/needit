@@ -1,3 +1,14 @@
+<?php //if session als sessie ni besta moe ge target hebbe naar home ?>
+<?php
+include_once("bootstrap.php");
+try {
+   $user = new User();
+   $currentUserId = $_SESSION["userId"];
+   $currentUser = $user->getUserInfo($currentUserId);
+} catch (\Throwable $th) {
+   $error = $th->getMessage();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,13 +50,13 @@
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link waves-effect waves-light" href="#">Home</a>
+        <a class="nav-link waves-effect waves-light" href="index.php">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-effect waves-light" href="#">verzoek/toevoegen</a>
+        <a class="nav-link waves-effect waves-light" href="choose-article.php">verzoek/toevoegen</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-effect waves-light" href="#">profiel</a>
+        <a class="nav-link waves-effect waves-light" href="profile.php">profiel</a>
       </li>
       <li class="nav-item">
         <a class="nav-link waves-effect waves-light" href="#">Krediet: 10</a>
@@ -71,39 +82,23 @@
       <div class="col-md col-mobile">
 
         <div style="margin-left: 39%; margin-top: 2%">
-          <a href="index.php" class="finders " style="text-decoration: none;  color:grey; margin-right:50px;">Artikelen </a><a href="" class="finders" style="text-decoration: none; color:black ;">Zoekertjes</a>
+          <a href="index.php" class="finders " style="text-decoration: none;  color:grey; margin-right:50px;">Artikelen </a><a href="" class="finders" style="text-decoration: none; color:black  ;">Zoekertjes</a>
           <hr style="margin-right: 73%; marging-top: 0px">
 
         </div>
 
         <div class="d-flex fllex-wrap" style="margin-left: 2%;">
-        <a href="" style="text-decoration: none;" class="article_clickable">
-          <div class="article ">
-          
-            <img src="img/background.png" alt="" style="width: 200px; height: 200px;">
-            <h4>Item 1</h4>
-            <p>descr</p>
-          </div>
-          <div class="grey">
-            <p>
-            username
-            </p>
-          </div>
-        </a>
-
-        <a href="" style="text-decoration: none;" class="article_clickable">
-          <div class="article ">
-          
-            <img src="img/background.png" alt="" style="width: 200px; height: 200px;">
-            <h4>Item 2</h4>
-            <p>descr</p>
-          </div>
-          <div class="grey">
-            <p>
-            username
-            </p>
-          </div>
-        </a>
+        <?php
+       
+         $feed = Post::getFeedServices();
+         $i = 0;
+        
+         foreach ($feed as $id => $service) : if ($i == 20) {
+               break;
+            } ?>
+            <?php include("service.inc.php") ?>
+         <?php $i++;
+         endforeach; ?>
 
         
 
@@ -114,12 +109,12 @@
 </div>
 </body>
 <footer class="footer bg-light text-center text-lg-start">
-        <!-- Copyright -->
-        <div class="text-center text-white p-3" style="color:white; background-color: #252523; box-shadow: 0px 0px 6px grey;">
-           
-            <a class="text-white" style="color:white; text-decoration: none;" href="">© 2020 Copyright: Elias Valienne en Kevin Vanbockryck</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0); box-shadow: 0px 0px 6px grey;">
+    © 2020 Copyright:
+    <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
 
 </html>
