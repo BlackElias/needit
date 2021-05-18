@@ -5,6 +5,7 @@ spl_autoload_register(function () {
     include_once("classes/Post.php");
     include_once("classes/User.php");
     include_once("classes/Services.php");
+    include_once("classes/Lend.php");
 });
 
 session_start();

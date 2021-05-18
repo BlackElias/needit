@@ -10,7 +10,7 @@ if (!empty($_POST)) {
         $post->setDescription($_POST["description"]);
         $tags = $post->cleanupTags($_POST["tags"]);
         $post->setTags($tags);
-        $image = $post->saveImage($_FILES["image"]["name"]);
+        $image = $post->saveImage($_FILES["image"]["name"],$type);
         $post->setImage($image);
      
         

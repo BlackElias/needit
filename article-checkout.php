@@ -1,3 +1,29 @@
+
+<?php
+include_once("bootstrap.php");
+
+if (!empty($_POST)) {
+    try {
+        $lend = new Lend();
+        $lend->setUser_id($_SESSION["userId"]);
+        $lend->setStart_date($_POST["startDate"]);
+        $lend->setEnd_date($_POST["endDate"]);
+       $lend->setPost_id($_GET["id"]);
+        
+     
+        
+        $lend->saveDate();
+        //header("Location: index.php");
+    } catch (\Throwable $th) {
+        $error = $th->getMessage();
+    }
+}
+print_r($lend);
+
+var_dump($lend);
+var_dump($_GET["id"]);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,10 +98,14 @@
           
             <img src="img/background.png" alt="" style=" " class="float-start article-image">
             <div class="grey">
-            <h4 >Item 1</h4>
-            <p>descr</p>
-            <button class="article-button" id="btn-left">Leen het nu</button>
-            
+            <form action="" method="POST">
+            <h4 ><?php echo $_GET["title"]?> </h4>
+            <input type="date" name="startDate">
+            <input type="date" name="endDate">
+            <?php /* checken if dat 2de datum ni voor eerste datum en wel is error en als da ni is else query insert into
+            */?>
+            <button class="article-button" id="btn-left"  type="submit">Leen het nu</button>
+            </form>
             </div>
           </div>
           

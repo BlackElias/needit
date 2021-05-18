@@ -90,7 +90,7 @@ try {
             <h4 ><?php echo htmlspecialchars($_GET["title"]) ?></h4>
             <p><?php echo htmlspecialchars($_GET['description'])  ?></p>
             <p><?php echo htmlspecialchars($_GET['firstname'])  ?><?php echo htmlspecialchars($_GET['lastname'])  ?></p>
-            <button class="article-button" id="btn-left">Leen het nu</button>
+           <a href="article-checkout.php?title=<?php echo $_GET["title"] ?>&id=<?php echo $_GET["id"] ?>"> <button class="article-button" id="btn-left">Leen het nu</button></a>
             
             </div>
             

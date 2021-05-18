@@ -10,6 +10,8 @@ class Post
     private $image;
     private $tags;
     private $title;
+    private $startDate;
+    private $endDate;
 
 
     /**
@@ -203,7 +205,7 @@ class Post
 
         return $this;
     }
- public function saveImage($image)
+    public function saveImage($image, $type)
     {
         //CHECK IF EMPTY
         if (empty($_FILES["image"]["name"])) {
@@ -217,8 +219,32 @@ class Post
         $ext = $path['extension'];
         $temp_name = $_FILES['image']['tmp_name'];
 
-      
-        
+        //APPLY FILTER
+        if ($ext === "png") {
+
+
+            $img = imagecreatefrompng($temp_name);
+            switch ($type) {
+                case 'IMG_FILTER_NEGATE':
+                    imagefilter($img, IMG_FILTER_NEGATE);
+                    break;
+                case 'IMG_FILTER_GRAYSCALE':
+                    imagefilter($img, IMG_FILTER_GRAYSCALE);
+                    break;
+                case 'IMG_FILTER_COLORIZE':
+                    imagefilter($img, IMG_FILTER_COLORIZE, 50, 0, 0);
+                    break;
+                case 'IMG_FILTER_MEAN_REMOVAL':
+                    imagefilter($img, IMG_FILTER_MEAN_REMOVAL);
+                    break;
+                case 'IMG_FILTER_EMBOSS':
+                    imagefilter($img, IMG_FILTER_EMBOSS);
+                    break;
+                default:
+                    break;
+            }
+            imagepng($img, $temp_name);
+        }
         //SET FILENAME
         $filename = "post_" . $id . "_" . mt_rand(100000, 999999);
         $path_filename_ext = $target_dir . $filename . "." . $ext;
@@ -387,6 +413,56 @@ class Post
         $user= $statement->fetchAll(PDO::FETCH_ASSOC);
         return $user;
     }
+ /**
+     * Get the value of startDate
+     */ 
+    public function getStartDate()
+    {
+        return $this->startDate;
+    }
 
+    /**
+     * Set the value of startDate
+     *
+     * @return  self
+     */ 
+    public function setStartDate($startDate)
+    {
+        $this->startDate = $startDate;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of endDate
+     */ 
+    public function getEndDate()
+    {
+        return $this->endDate;
+    }
+
+    /**
+     * Set the value of endDate
+     *
+     * @return  self
+     */ 
+    public function setEndDate($endDate)
+    {
+        $this->endDate = $endDate;
+
+        return $this;
+    }
+   
+    public static function getLend($postId)
+    {
+        $conn = Db::getConnection();
+
+        $sql = "SELECT post_id, start_date, end_date FROM lend WHERE end_date = :end_date ";
+        $statement = $conn->prepare($sql);
+        $statement->bindValue(":post_id", $postId);
+        $statement->execute();
+        $posts = $statement->fetchAll();
+        return $posts;
+    }
    
 }
