@@ -90,7 +90,7 @@
         <!-- Copyright -->
         <div class="text-center text-white p-3" style="color:white; background-color: #252523; box-shadow: 0px 0px 6px grey;">
            
-            <a class="text-white" style="color:white; text-decoration: none;" href="">© 2020 Copyright: Elias Valienne en Kevin Vanbockryck</a>
+            <a class="text-white" style="color:white; text-decoration: none;" href="">© 2020 Copyright: Elias Valienne </a>
         </div>
         <!-- Copyright -->
     </footer>

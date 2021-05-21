@@ -98,14 +98,30 @@ class Lend
         $postId = $this->getPost_id();
         $start_date = $this->getStart_date();
         $end_date = $this->getEnd_date();
-        
+        echo $sql;
         
        
         $statement->bindValue(":user_id", $user_id);
          $statement->bindValue(":post_id", $postId);
         $statement->bindValue(":start_date", $start_date );
         $statement->bindValue(":end_date", $end_date);
+        $statement->execute();
+    }
+    public static function postDate()
+    {
+        $conn = Db::getConnection();
+        $sql = "SELECT `start_date`,`end_date` FROM `lend` WHERE post_id = :post_id";
+        $statement = $conn->prepare($sql);
+        $postId = $_GET["id"];
+        $statement->bindValue(":post_id", $postId);
+        $statement->execute();
+        $service = $statement->fetchAll();
+        return $service;
+        
        
+        
+
+        
     }
 
     

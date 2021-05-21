@@ -6,22 +6,43 @@ if (!empty($_POST)) {
     try {
         $lend = new Lend();
         $lend->setUser_id($_SESSION["userId"]);
-        $lend->setStart_date($_POST["startDate"]);
-        $lend->setEnd_date($_POST["endDate"]);
-       $lend->setPost_id($_GET["id"]);
+        $lend->setPost_id($_GET["id"]);
+        $lend->setStart_date($_POST['startDate']);
+        $lend->setEnd_date($_POST['endDate']);
+        $startDate = $_POST['startDate'];
+        $endDate = $_POST['endDate'];
+        echo $startDate;
+        echo $endDate;
+        if(strtotime($_POST['startDate']) < strtotime($_POST['endDate'])){
+          //als u post = post ni zelfde strat en eind datum
+          $feed = Lend::postDate();
+          
+         $i = 0;
+          foreach ($feed as  $post) :  ?>
+             <?php if($_POST['startDate'] >= $post["start_date"] && $_POST['startDate'] <= $post["end_date"] ){
+              echo "kut";
+              $i++;
+              }        ?>
+
+          <?php endforeach; 
+          if ( $i > 0){
+            echo "error";
+          }else{
+             $lend->saveDate();
+        header("Location: index.php");
+          }
+         ;
+        }
+         
         
-     
         
-        $lend->saveDate();
-        //header("Location: index.php");
+      
     } catch (\Throwable $th) {
         $error = $th->getMessage();
     }
-}
-print_r($lend);
+}else{ echo $_POST['endDate'];}
 
-var_dump($lend);
-var_dump($_GET["id"]);
+var_dump($lend)
 
 ?>
 <!DOCTYPE html>
@@ -101,7 +122,7 @@ var_dump($_GET["id"]);
             <form action="" method="POST">
             <h4 ><?php echo $_GET["title"]?> </h4>
             <input type="date" name="startDate">
-            <input type="date" name="endDate">
+            <input type="date" name="endDate" >
             <?php /* checken if dat 2de datum ni voor eerste datum en wel is error en als da ni is else query insert into
             */?>
             <button class="article-button" id="btn-left"  type="submit">Leen het nu</button>
@@ -123,12 +144,12 @@ var_dump($_GET["id"]);
 </div>
 </body>
 <footer class="footer bg-light text-center text-lg-start">
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0); box-shadow: 0px 0px 6px grey;">
-    © 2020 Copyright:
-    <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-  </div>
-  <!-- Copyright -->
-</footer>
+        <!-- Copyright -->
+        <div class="text-center text-white p-3" style="color:white; background-color: #252523; box-shadow: 0px 0px 6px grey;">
+           
+            <a class="text-white" style="color:white; text-decoration: none;" href="">© 2020 Copyright: Elias Valienne </a>
+        </div>
+        <!-- Copyright -->
+    </footer>
 
 </html>
