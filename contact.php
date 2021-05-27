@@ -21,13 +21,13 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="justify-content: center; margin-left:-4%;">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="justify-content: flex-end; margin-left:-4%;">
             <div class="navbar-nav">
             <a class="nav-link " aria-current="page" href="home.php">Home</a>
             
                 <a class="nav-link active" aria-current="page" href="contact.php">Contact</a>
                 
-                <a class="nav-link " href="about.php">About Us</a>
+                <a class="nav-link " href="signup.php">Meld je aan</a>
                 <a class="nav-link" href="login.php">Login</a>
             </div>
         </div>
@@ -86,5 +86,5 @@
         <!-- Copyright -->
     </footer>
 </body>
-
+<script src="app.js"></script>
 </html>

@@ -41,22 +41,22 @@ if (!empty($_POST)) {
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="justify-content: center; margin-left:-4%;">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="justify-content: flex-end; margin-left:-4%;">
             <div class="navbar-nav">
             <a class="nav-link " aria-current="page" href="home.php">Home</a>
             
-                <a class="nav-link " aria-current="page" href="contact.php">Contact</a>
+                <a class="nav-link active" aria-current="page" href="contact.php">Contact</a>
                 
-                <a class="nav-link " href="about.php">About Us</a>
-                <a class="nav-link active" href="login.php">Login</a>
+                <a class="nav-link " href="signup.php">Meld je aan</a>
+                <a class="nav-link" href="login.php">Login</a>
             </div>
         </div>
     </div>
 </nav>
 <body style="background-color: #CF8D1E;">
 
-<div class=" wrapper  ">
-<form method="POST" class="wrapper-medium form-login"> 
+<div class=" wrapper  " >
+<form method="POST" class="wrapper-medium form-login" > 
     <h1 class="title-left"> Log in</h1>
   <div class="mb-3 font ">
     <label for="exampleInputPassword1" class="form-label ">Email</label>
@@ -73,15 +73,16 @@ if (!empty($_POST)) {
 </form>
 
   </div>
-  <img src="img/background.png" class="img-fluid title-img" alt="background image">
+  <img src="img/background.png" class="img-fluid title-img" alt="background image" >
 </body>
 
 <footer class="footer bg-light text-center text-lg-start">
         <!-- Copyright -->
         <div class="text-center text-white p-3" style="color:white; background-color: #252523; box-shadow: 0px 0px 6px grey;">
            
-            <a class="text-white" style="color:white; text-decoration: none;" href="">© 2020 Copyright: Elias Valienne en Kevin Vanbockryck</a>
+            <a class="text-white" style="color:white; text-decoration: none;" href="">© 2020 Copyright: Elias Valienne </a>
         </div>
         <!-- Copyright -->
     </footer>
+    <script src="app.js"></script>
 </html>

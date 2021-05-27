@@ -40,7 +40,7 @@ try {
 
   <!-- Navbar brand -->
 
-  <img class="logo" src="img/logo.png" alt="logo" style="margin-left: 10px;">
+  <img class="logo" src="img/logo.png" alt="logo" id="logo" style="margin-left: 10px;">
   <div class="center" style=" ">
     <form class="form-inline ">
       <div class="md-form my-0 ">
@@ -120,7 +120,7 @@ try {
             <a href=""> <button class="article-button btn-product" type="submit" id="">Zie product</button></a>
           <br>
         
-          <a href="signup.php"> <button class="article-button btn-product" type="submit" id="">uitloggen</button></a>
+          <a href="logout.php"> <button class="article-button btn-product" type="submit" id="">uitloggen</button></a>
         
         
           
@@ -140,5 +140,5 @@ try {
   </div>
   <!-- Copyright -->
 </footer>
-
+<script src="app.js"></script>
 </html>

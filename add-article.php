@@ -45,7 +45,7 @@ var_dump($image);
 
   <!-- Navbar brand -->
 
-  <img class="logo" src="img/logo.png" alt="logo" style="margin-left: 10px;">
+  <img class="logo" src="img/logo.png" id="logo" alt="logo" style="margin-left: 10px;">
   <div class="center" style=" ">
     <form class="form-inline ">
       <div class="md-form my-0 ">
@@ -140,4 +140,5 @@ var_dump($image);
   <!-- Copyright -->
 </footer>
 <script src="scripts/new_post.js"></script>
+<script src="app.js"></script>
 </html>

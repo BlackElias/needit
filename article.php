@@ -29,7 +29,7 @@ try {
 
   <!-- Navbar brand -->
 
-  <img class="logo" src="img/logo.png" alt="logo" style="margin-left: 10px;">
+  <img class="logo" src="img/logo.png" alt="logo" id="logo" style="margin-left: 10px;">
   <div class="center" style=" ">
     <form class="form-inline ">
       <div class="md-form my-0 ">
@@ -118,5 +118,5 @@ try {
   </div>
   <!-- Copyright -->
 </footer>
-
+<script src="app.js"></script>
 </html>
