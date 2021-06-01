@@ -1,4 +1,4 @@
-<?php //if session als sessie ni besta moe ge target hebbe naar home ?>
+
 <?php
 include_once("bootstrap.php");
 try {
@@ -59,7 +59,7 @@ try {
         <a class="nav-link waves-effect waves-light" href="profile.php">profiel</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-effect waves-light" href="#">Krediet: <?php echo htmlspecialchars($currentUser["krediet"])?>
+        <a class="nav-link waves-effect waves-light" href="krediet.php">Krediet: <?php echo htmlspecialchars($currentUser["krediet"])?>
 </a>
       </li>
     </ul>

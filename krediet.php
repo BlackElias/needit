@@ -1,3 +1,17 @@
+<?php
+include_once("bootstrap.php");
+
+
+try {
+  $user = new User();
+  $currentUserId = $_SESSION["userId"];
+  $currentUser = $user->getUserInfo($currentUserId);
+  
+} catch (\Throwable $th) {
+  $error = $th->getMessage();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +62,7 @@
         <a class="nav-link waves-effect waves-light" href="profile.php">profiel</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-effect waves-light" href="#">Krediet: 10</a>
+        <a class="nav-link waves-effect waves-light" href="#">Krediet: <?php echo htmlspecialchars($currentUser["krediet"])?></a>
       </li>
     </ul>
   </div>
@@ -59,17 +73,17 @@
 
 <body>
  <div class="d-flex ">
-   <p class="title-add">10 krediet: 5 </p>
-   <p class="title-add">50 krediet: 20</p>
-   <p class="title-add">100 krediet: 45</p>
+   <p class="title-add">10 krediet: 5€ </p>
+   <p class="title-add">50 krediet: 20€</p>
+   <p class="title-add">100 krediet: 45€</p>
     </div>  
 
 
 
       <div class=" btns">
-     <a href="add-article.php"> <button class="article-button" id="btn-right">koop nu 10 krediet</button></a>
-     <a href="add-service.php"> <button class="article-button" id="btn-center">koop nu 50 krediet</button></a>
-     <a href=""> <button class="article-button" id="btn">koop nu 100 krediet</button></a>
+    <form action="10.php" method="POST"  > <a href=""> <button  class="article-button" id="btn-right" type="submit">koop nu 10 krediet</button></a></form>
+    <form action="50.php" method="POST" > <a href=""> <button class="article-button" id="btn-center" type="submit" >koop nu 50 krediet</button></a></form>
+    <form action="100.php" method="POST" > <a href=""> <button class="article-button" id="btn" type="submit" >koop nu 100 krediet</button></a></form>
 
         </div>
 

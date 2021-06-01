@@ -411,6 +411,20 @@ class User
         return $path_filename_ext;
     }
 
+public function updatekrediet($currentUserId)
+    {
+        $conn = Db::getConnection();
+        
+        $statement = $conn->prepare("UPDATE users SET krediet = :krediet WHERE id = :currentUserId");
+        $statement->bindValue(":currentUserId", $currentUserId);
+        $krediet = $this->getKrediet();
+        $statement->bindValue(":krediet", $krediet);
+
+
+        $user = $statement->execute();
+
+        return $user;
+    }
    
 
 }
