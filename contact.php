@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +13,7 @@
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-white" style="box-shadow: 0px 3px 3px black;">
     <div class="container-fluid text-center ">
-    <img class="logo" src="img/logo.png" alt="logo">
+        <img class="logo" src="img/logo.png" alt="logo">
 
 
 
@@ -23,10 +22,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="justify-content: flex-end; margin-left:-4%;">
             <div class="navbar-nav">
-            <a class="nav-link " aria-current="page" href="home.php">Home</a>
-            
+                <a class="nav-link " aria-current="page" href="home.php">Home</a>
+
                 <a class="nav-link active" aria-current="page" href="contact.php">Contact</a>
-                
+
                 <a class="nav-link " href="signup.php">Meld je aan</a>
                 <a class="nav-link" href="login.php">Login</a>
             </div>
@@ -34,57 +33,48 @@
     </div>
 </nav>
 
-<body style="background-color: #1E706B;">
+<body style="background-color: #1E706B; color: white;">
 
-    <div class="row" style="--bs-gutter-x: 0rem; background-color:white;">
-        <div class="bg-image p-3 text-center shadow-1-strong col-md   flex-item-left" style="
-       width: 80vh; background-size: 50%; background-repeat: no-repeat; margin-top: 150px;">
+    <div class="row" style="--bs-gutter-x: 0rem; ">
+        <div class="bg-image p-3 text-center shadow-1-strong col-md w-25 flex-item-" style="
+       width: 80vh; background-size: 50%; background-repeat: no-repeat; margin-top: 80px;">
             <h1 class="mb-3 h2">Contacteer ons</h1>
-
             <p>Je kan ons contacteeren op het nummer: 0495429542 </p>
-            <hr style="width:50%; margin-left: 25%"></hr>
-            
-
+            <hr style="width:50%; margin-left: 25%">
+            </hr>
             <p>Of vul het email formulier in </p>
-        
-        </div>
-
-
-
-        <div class="col-md wrapper " style="margin-top: -150px; ">
-            <form action="mailto:elias.valienne@hotmail.com" method="POST">
+            <form action="mailto:elias.valienne@hotmail.com" method="POST"  class="wrapper-medium-contact form-login">
                 <div class="form-outline" style="margin-top: 2%;">
-                    <label class="form-label" for="typeText">Name input</label>
-                    <input placeholder="Your name" type="text" name="name" method="POST" enctype="multipart/form-data" name="EmailForm" type="text" id="typeText" size="19" class="form-control" required />
-
+                    <label class="form-label" for="typeText">Voornaam </label>
+                    <input placeholder="Voornaam" type="text" name="name" method="POST" enctype="multipart/form-data" name="EmailForm" type="text" id="typeText" size="19" class="form-control" required />
                 </div>
-
                 <div class="form-outline">
-                    <label class="form-label" for="typeEmail">Email input</label>
+                    <label class="form-label" for="typeEmail">Email </label>
                     <fieldset>
-                        <input placeholder="Your Email Adress" action="?go" method="post" type="text" name="email" id="typeEmail" class="form-control" required />
+                        <input placeholder="Email Adress" action="?go" method="post" type="text" name="email" id="typeEmail" class="form-control " required />
                     </fieldset>
                 </div>
 
-                <div class="form-outline">
+                <div class="form-outline" style="margin-bottom: 20px;">
                     <label class="form-label" for="textAreaExample">Message</label>
                     <textarea placeholder="Type your Message Here...." class="form-control" id="textAreaExample" rows="4" required></textarea>
 
                 </div>
-                <button id="submit" data-submit="...Sending" name="submit" type="submit" class="btn btn-outline-secondary" data-mdb-ripple-color="dark" value="send">
-                    Submit
+                <button id="submit" data-submit="...Sending" name="submit" type="submit" class="btn btn-contact btn-outline-secondary" data-mdb-ripple-color="dark" value="send" style="color:white;">
+                    Stuur bericht
                 </button>
             </form>
         </div>
-</div>
-        <footer class="footer bg-light text-center text-lg-start">
+    </div>
+    <footer class="footer bg-light text-center text-lg-start">
         <!-- Copyright -->
         <div class="text-center text-white p-3" style="color:white; background-color: #252523; box-shadow: 0px 0px 6px grey;">
-           
+
             <a class="text-white" style="color:white; text-decoration: none;" href="">© 2020 Copyright: Elias Valienne en Kevin Vanbockryck</a>
         </div>
         <!-- Copyright -->
     </footer>
 </body>
 <script src="app.js"></script>
+
 </html>

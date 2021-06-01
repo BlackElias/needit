@@ -69,11 +69,11 @@ if (!empty($_POST)) {
     
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn-login btn-primary">Login</button>
 </form>
 
   </div>
-  <img src="img/background.png" class="img-fluid title-img" alt="background image" >
+  <img src="img/hero-img.png" class="img-fluid title-img-login" alt="background image" >
 </body>
 
 <footer class="footer bg-light text-center text-lg-start">

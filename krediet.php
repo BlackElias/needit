@@ -1,14 +1,3 @@
-<?php //if session als sessie ni besta moe ge target hebbe naar home ?>
-<?php
-include_once("bootstrap.php");
-try {
-   $user = new User();
-   $currentUserId = $_SESSION["userId"];
-   $currentUser = $user->getUserInfo($currentUserId);
-} catch (\Throwable $th) {
-   $error = $th->getMessage();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,8 +48,7 @@ try {
         <a class="nav-link waves-effect waves-light" href="profile.php">profiel</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-effect waves-light" href="#">Krediet: <?php echo htmlspecialchars($currentUser["krediet"])?>
-</a>
+        <a class="nav-link waves-effect waves-light" href="#">Krediet: 10</a>
       </li>
     </ul>
   </div>
@@ -70,37 +58,27 @@ try {
 <!-- Navbar -->
 
 <body>
-  <div class="filter">
-    <div class="row" style="--bs-gutter-x: 0rem;">
-      <div class="bg-image p-3 text-center shadow-1-strong col-md  text-white flex-item-left" style="background-color:#7a7f84 ;
-        background-size: 110%;  height: 90vh; flex: 0 1 0%;">
-        <h1>filters</h1>
-
-      </div>
+ <div class="d-flex ">
+   <p class="title-add">10 krediet: 5 </p>
+   <p class="title-add">50 krediet: 20</p>
+   <p class="title-add">100 krediet: 45</p>
+    </div>  
 
 
 
-      <div class="col-md col-mobile">
-
-        <div style="margin-left: 39%; margin-top: 2%">
-          <a href="" class="finders " style="text-decoration: none;  color:black; margin-right:50px;">Artikelen </a><a href="zoekertjes.php" class="finders" style="text-decoration: none; color:grey ;">Zoekertjes</a>
-          <hr style="margin-right: 73%; marging-top: 0px">
+      <div class=" btns">
+     <a href="add-article.php"> <button class="article-button" id="btn-right">koop nu 10 krediet</button></a>
+     <a href="add-service.php"> <button class="article-button" id="btn-center">koop nu 50 krediet</button></a>
+     <a href=""> <button class="article-button" id="btn">koop nu 100 krediet</button></a>
 
         </div>
 
         <div class="d-flex fllex-wrap" style="margin-left: 2%;">
-        <?php
-       
-         $feed = Post::getFeedPosts();
-         $i = 0;
         
-         foreach ($feed as $id => $post) : if ($i == 20) {
-               break;
-            } ?>
-            <?php include("post.inc.php") ?>
-         <?php $i++;
-         endforeach; ?>
 
+        
+
+        
 
       </div>
     </div>
@@ -112,7 +90,7 @@ try {
         <!-- Copyright -->
         <div class="text-center text-white p-3" style="color:white; background-color: #252523; box-shadow: 0px 0px 6px grey;">
            
-            <a class="text-white" style="color:white; text-decoration: none;" href="">© 2020 Copyright: Elias Valienne </a>
+            <a class="text-white" style="color:white; text-decoration: none;" href="">© 2020 Copyright: Elias Valienne</a>
         </div>
         <!-- Copyright -->
     </footer>

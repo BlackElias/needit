@@ -124,7 +124,7 @@ if (!empty($_POST)) {
         <input type="ship-zip" name="city" class="form-control black-border w-25" style="border-radius: 10px;" id="exampleInputEmail1" aria-describedby="ship-zip">
 
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">meld je aan</button>
 
     </form>
  

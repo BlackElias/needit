@@ -12,6 +12,7 @@ class User
     private $streetname;
     private $streetnumber;
     private $city;
+    private $krediet;
 
     /**
      * Get the value of userId
@@ -55,6 +56,25 @@ class User
         return $this;
     }
     
+    /**
+     * Get the value of krediet
+     */ 
+    public function getKrediet()
+    {
+        return $this->krediet;
+    }
+
+    /**
+     * Set the value of krediet
+     *
+     * @return  self
+     */ 
+    public function setKrediet($krediet)
+    {
+        $this->krediet = $krediet;
+
+        return $this;
+    }
 
     /**
      * Get the value of streetname
@@ -240,7 +260,7 @@ class User
     {
         $conn = Db::getConnection();
 
-        $sql = "INSERT INTO users (firstname, lastname, email, password, streetname, streetnumber, city) VALUES (:firstname, :lastname, :email, :password, :streetname, :streetnumber, :city)";
+        $sql = "INSERT INTO users (firstname, lastname, email, password, streetname, streetnumber, city, krediet) VALUES (:firstname, :lastname, :email, :password, :streetname, :streetnumber, :city,  +5)";
  
         $statement = $conn->prepare($sql);
        
@@ -251,7 +271,8 @@ class User
         $streetname = $this->getStreetname();
         $streetnumber = $this->getStreetnumber();
         $city = $this->getCity();
-        
+        $krediet = $this->getKrediet();
+
         $statement->bindValue(":firstname", $firstname);
         $statement->bindValue(":lastname", $lastname);
         $statement->bindValue(":email", $email);
@@ -259,6 +280,7 @@ class User
         $statement->bindValue(":streetname", $streetname);
         $statement->bindValue(":streetnumber", $streetnumber);
         $statement->bindValue(":city", $city);
+      
         $statement->execute();
     }
 
@@ -390,4 +412,5 @@ class User
     }
 
    
+
 }
