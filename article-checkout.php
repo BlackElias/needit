@@ -29,7 +29,7 @@ if (!empty($_POST)) {
             echo "error";
           }else{
              $lend->saveDate();
-        header("Location: index.php");
+        
           }
          ;
         }
@@ -42,7 +42,7 @@ if (!empty($_POST)) {
     }
 }else{ echo $_POST['endDate'];}
 
-var_dump($lend)
+
 
 ?>
 <!DOCTYPE html>
@@ -119,7 +119,7 @@ var_dump($lend)
           
             <img src="img/background.png" alt="" style=" " class="float-start article-image">
             <div class="grey">
-            <form action="" method="POST">
+            <form action="removeKrediet.php" method="POST">
             <h4 ><?php echo $_GET["title"]?> </h4>
             <input type="date" name="startDate">
             <input type="date" name="endDate" >
