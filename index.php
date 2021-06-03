@@ -72,10 +72,13 @@ try {
 <body>
   <div class="filter">
     <div class="row" style="--bs-gutter-x: 0rem;">
-      <div class="bg-image p-3 text-center shadow-1-strong col-md  text-white flex-item-left" style="background-color:#7a7f84 ;
+      <div class="bg-image p-3 text-center shadow-1-strong col-md  text-white flex-item-left" style="background-color:#1E706B ;
         background-size: 110%;  height: 90vh; flex: 0 1 0%;">
         <h1>filters</h1>
-
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
       </div>
 
 
@@ -83,12 +86,13 @@ try {
       <div class="col-md col-mobile">
 
         <div style="margin-left: 39%; margin-top: 2%">
-          <a href="" class="finders " style="text-decoration: none;  color:black; margin-right:50px;">Artikelen </a><a href="zoekertjes.php" class="finders" style="text-decoration: none; color:grey ;">Zoekertjes</a>
-          <hr style="margin-right: 73%; marging-top: 0px">
+        <a href="" class="finders " style="text-decoration: none;  color:black; ">Artikelen </a><a href="add-classifieds.php" class="finders" style="text-decoration: none; color:grey ;">Diensten</a><a href="zoekertjes.php" class="finders" style="text-decoration: none; color:grey ;">Zoekertjes</a>
+
+          <hr style="margin-right: 57%; marging-top: 0px">
 
         </div>
 
-        <div class="d-flex fllex-wrap" style="margin-left: 2%;">
+        <div class="d-flex fllex-wrap" style="margin-left: 5%;">
         <?php
        
          $feed = Post::getFeedPosts();

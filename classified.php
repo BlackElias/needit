@@ -93,7 +93,7 @@ try {
         <div class="d-flex fllex-wrap" style="margin-left: 2%;">
         <?php
        
-         $feed = Post::getFeedServices();
+         $feed = Post::getFeedClassified();
          $i = 0;
         
          foreach ($feed as $id => $service) : if ($i == 20) {

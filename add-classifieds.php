@@ -1,13 +1,28 @@
-<?php //if session als sessie ni besta moe ge target hebbe naar home ?>
+
 <?php
 include_once("bootstrap.php");
-try {
-   $user = new User();
-   $currentUserId = $_SESSION["userId"];
-   $currentUser = $user->getUserInfo($currentUserId);
-} catch (\Throwable $th) {
-   $error = $th->getMessage();
+
+if (!empty($_POST)) {
+    try {
+        $post = new Classified();
+        $post->setUserId($_SESSION["userId"]);
+        $post->setTitle($_POST["title"]);
+        $post->setDescription($_POST["description"]);
+        $tags = $post->cleanupTags($_POST["tags"]);
+        $post->setTags($tags);
+       
+     
+        
+        $post->saveClassified();
+        //header("Location: index.php");
+    } catch (\Throwable $th) {
+        $error = $th->getMessage();
+    }
 }
+var_dump($post);
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +44,7 @@ try {
 
   <!-- Navbar brand -->
 
-  <img class="logo" src="img/logo.png" alt="logo" id="logo" style="margin-left: 10px;">
+  <img class="logo" src="img/logo.png" id="logo" alt="logo" style="margin-left: 10px;">
   <div class="center" style=" ">
     <form class="form-inline ">
       <div class="md-form my-0 ">
@@ -47,8 +62,8 @@ try {
 
   <div class="navbar-collapse collapse" id="basicExampleNav" style="margin-left: 25%;">
 
-    <!-- Links -->
-    <ul class="navbar-nav mr-auto">
+   <!-- Links -->
+   <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link waves-effect waves-light" href="index.php">Home</a>
       </li>
@@ -68,56 +83,57 @@ try {
 </nav>
 <!-- Navbar -->
 
-<body>
+<body style="background-color: #F9F7F7;">
   <div class="filter">
     <div class="row" style="--bs-gutter-x: 0rem;">
-    <div class="bg-image p-3 text-center shadow-1-strong col-md  text-white flex-item-left" style="background-color:#1E706B ;
-        background-size: 110%;  height: 90vh; flex: 0 1 0%;">
-        <h1>filters</h1>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
+      <div class="bg-image p-3 text-center shadow-1-strong col-md  text-white flex-item-left" style=" 
+        background-size: 110%;  height: 90vh; flex: 1 1 0%;">
+    <form action="" method="POST">
+        
       </div>
 
 
 
       <div class="col-md col-mobile">
-
-        <div style="margin-left: 39%; margin-top: 2%">
-          <a href="" class="finders " style="text-decoration: none;  color:black; ">Artikelen </a><a href="add-classifieds.php" class="finders" style="text-decoration: none; color:grey ;">Diensten</a><a href="zoekertjes.php" class="finders" style="text-decoration: none; color:grey ;">Zoekertjes</a>
-          <hr style="margin-right: 57%; marging-top: 0px">
-
+        <div>
+          
+            <label class="title-add" for="">Naam verzoeker:</label>
+            <input type="name" name="title" class="input-product" placeholder=" type hier iets">
+          
         </div>
 
-        <div class="d-flex fllex-wrap" style="margin-left: 2%;">
-        <?php
-       
-         $feed = Post::getFeedServices();
-         $i = 0;
-        
-         foreach ($feed as $id => $service) : if ($i == 20) {
-               break;
-            } ?>
-            <?php include("service.inc.php") ?>
-         <?php $i++;
-         endforeach; ?>
 
+
+        <div>
+         
+            <label class="title-add" for="" id="description">Beschrijving:</label>
+            <textarea type="text" name="description" class="textarea-description"placeholder="type hier uw bericht"></textarea>
+          <br>
         
 
+        
+          <label class="title-add-service" for="" id="tags" >tags:</label>
+          <input type="name" name="tags" class="input-tags"placeholder=" #rood">
+         
+          
+          <br>
+           <button class="article-button btn-product" type="submit" id="">Zet verzoek online</button>
+        </form>
       </div>
+</div>
     </div>
 
   </div>
-</div>
+  </div>
 </body>
 <footer class="footer bg-light text-center text-lg-start">
-        <!-- Copyright -->
-        <div class="text-center text-white p-3" style="color:white; background-color: #252523; box-shadow: 0px 0px 6px grey;">
-           
-            <a class="text-white" style="color:white; text-decoration: none;" href="">© 2020 Copyright: Elias Valienne </a>
-        </div>
-        <!-- Copyright -->
-    </footer>
-    <script src="app.js"></script>
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0); box-shadow: 0px 0px 6px grey;">
+    © 2020 Copyright:
+    <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<script src="scripts/new_post.js"></script>
+<script src="app.js"></script>
 </html>

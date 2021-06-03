@@ -12,7 +12,7 @@ if (!empty($_POST)) {
      
         
         $service->saveServices();
-        header("Location: index.php");
+      //  header("Location: index.php");
     } catch (\Throwable $th) {
         $error = $th->getMessage();
     }var_dump($service);

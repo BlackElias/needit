@@ -10,12 +10,11 @@ if (!empty($_POST)) {
         $post->setDescription($_POST["description"]);
         $tags = $post->cleanupTags($_POST["tags"]);
         $post->setTags($tags);
-        $image = $post->saveImage($_FILES["image"]["name"],$type);
-        $post->setImage($image);
+       
      
         
         $post->savePosts();
-        //header("Location: index.php");
+        header("Location: index.php");
     } catch (\Throwable $th) {
         $error = $th->getMessage();
     }
